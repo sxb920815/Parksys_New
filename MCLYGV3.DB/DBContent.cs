@@ -17,8 +17,6 @@ namespace MCLYGV3.DB
 		public DbSet<M_Role> RoleList { get; set; }
 		public DbSet<M_ItemInfo> ItemInfoList { get; set; }
 		public DbSet<M_SysFile> SysFileList { get; set; }
-		public DbSet<M_UserInfo> UserInfoList { get; set; }
-
 		public DBContext()
 		{
 			Database.SetInitializer<DBContext>(null);

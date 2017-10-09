@@ -3,71 +3,73 @@
 	<ItemList>
 		<MenuItem>
 			<id>M5</id>
-			<text>订单管理</text>
+			<text>信息记录</text>
 			<iconCls>fa  fa-wrench</iconCls>
 			<attributes>#</attributes>
 			<state>closed</state>
 			<ItemList>
 				<MenuItem>
 					<id>M5_1</id>
-					<text>订单列表</text>
+					<text>违章车辆</text>
 					<iconCls>fa  fa-reorder</iconCls>
 					<attributes>Administrator/Order_List</attributes>
 					<state>open</state>
 				</MenuItem>
         <MenuItem>
-          <id>M5_1</id>
-          <text>订单下载</text>
+          <id>M5_2</id>
+          <text>出入记录</text>
+          <iconCls>fa  fa-reorder</iconCls>
+          <attributes>Administrator/Order_DownLoad</attributes>
+          <state>open</state>
+        </MenuItem>
+        <MenuItem>
+          <id>M5_3</id>
+          <text>微波记录</text>
           <iconCls>fa  fa-reorder</iconCls>
           <attributes>Administrator/Order_DownLoad</attributes>
           <state>open</state>
         </MenuItem>
 			</ItemList>
 		</MenuItem>
+    
 		<MenuItem>
 			<id>M7</id>
-			<text>业务管理</text>
+			<text>系统管理</text>
 			<iconCls>fa  fa-wrench</iconCls>
 			<attributes>#</attributes>
 			<state>closed</state>
 			<ItemList>
 				<MenuItem>
 					<id>M7_1</id>
-					<text>代理公司列表</text>
+					<text>摄像机管理</text>
 					<iconCls>fa  fa-reorder</iconCls>
 					<attributes>Administrator/Company_List</attributes>
 					<state>open</state>
 				</MenuItem>
 				<MenuItem>
 					<id>M7_2</id>
-					<text>业务员列表</text>
+					<text>区域管理</text>
 					<iconCls>fa  fa-reorder</iconCls>
 					<attributes>Administrator/UserInfo_List</attributes>
 					<state>open</state>
 				</MenuItem>
         <MenuItem>
           <id>M7_3</id>
-          <text>公司费率</text>
+          <text>摄像机区域绑定</text>
           <iconCls>fa  fa-reorder</iconCls>
           <attributes>Administrator/MoneyConfig_List</attributes>
           <state>open</state>
         </MenuItem>
         <MenuItem>
           <id>M7_4</id>
-          <text>业务员费率</text>
+          <text>内部车辆管理</text>
           <iconCls>fa  fa-reorder</iconCls>
           <attributes>Administrator/MoneyConfigChild_List</attributes>
           <state>open</state>
         </MenuItem>
-        <MenuItem>
-          <id>M7_5</id>
-          <text>利润分成</text>
-          <iconCls>fa  fa-reorder</iconCls>
-          <attributes>Administrator/MoneyStatic_List</attributes>
-          <state>open</state>
-        </MenuItem>
 			</ItemList>
 		</MenuItem>
+    
 		<MenuItem>
 			<id>M8</id>
 			<text>个人中心</text>

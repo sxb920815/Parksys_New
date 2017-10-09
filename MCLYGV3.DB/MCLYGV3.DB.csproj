@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLLEXT\AdminUser.cs" />
-    <Compile Include="BLLEXT\B_UserInfo.cs" />
     <Compile Include="BLLEXT\Permission.cs" />
     <Compile Include="BLLEXT\Role.cs" />
     <Compile Include="ClassLib\Common.cs" />
@@ -99,10 +98,6 @@
     <Compile Include="DB\SysFile_Bll_DelQuery.cs" />
     <Compile Include="DB\SysFile_Bll_Edit.cs" />
     <Compile Include="Model\SysFile_M.cs" />
-    <Compile Include="DB\UserInfo_Bll_Add.cs" />
-    <Compile Include="DB\UserInfo_Bll_DelQuery.cs" />
-    <Compile Include="DB\UserInfo_Bll_Edit.cs" />
-    <Compile Include="Model\UserInfo_M.cs" />
     <Compile Include="Module\CTGroupInsInfo.cs" />
     <Compile Include="Module\GroupCreateClientRequest.cs" />
     <Compile Include="Module\PAGroupInsInfo.cs" />

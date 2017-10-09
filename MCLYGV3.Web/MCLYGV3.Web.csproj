@@ -307,6 +307,7 @@
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AdminUser.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AdminUserRole.cs" />
+    <Compile Include="Controllers\Administrator\AdministratorController_Equment.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_Permission.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_PermissionOperation.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_Role.cs" />
@@ -318,7 +319,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseApiController.cs" />
     <Compile Include="Models\CTServerGroupCorrectRequest.cs" />
     <Compile Include="Models\CTServerRequest.cs" />
     <Compile Include="Models\DataJsonResult.cs" />
@@ -384,6 +384,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="PageBrace\BackFrame\Css\locale\" />
+    <Folder Include="Views\AdministratorController_Equment\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MCLYGV3.DB\MCLYGV3.DB.csproj">

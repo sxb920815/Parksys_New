@@ -65,16 +65,6 @@ namespace MCLYGV3.Web.Controllers
 			Response.Charset = "UTF-8";
 			return JsonConvert.SerializeObject(result);
 		}
-        [HttpPost]
-        public string GetUserNameByUserId(int id)
-        {
-            M_UserInfo User = B_UserInfo.Find(id);
-            if (User == null)
-            {
-                return "";
-            }
-            return User.UserName;
-        }
 
 
 
