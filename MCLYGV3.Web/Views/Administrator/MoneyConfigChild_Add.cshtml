@@ -1,0 +1,105 @@
+﻿@model MCLYGV3.DB.M_MoneyConfigChild
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<script type="text/javascript">
+	$(function () {
+		$("#btnSave").click(function () {
+			if ($("form").valid()) {
+				var queryArray = $("form").serializeObject();
+				var jsonString = JSON.stringify(queryArray);
+				$.ajax({
+					url: "@Url.Action("AddMoneyConfigChild")",
+					type: "Post",
+					data: jsonString,
+					dataType: "json",
+					success: function (data) {
+						if (data.type == 0) {
+							window.parent.frameReturnByMes(data.message);
+							window.parent.frameReturnByReload(true);
+							window.parent.frameReturnByClose()
+						}
+						else {
+							window.parent.frameReturnByMes(data.message);
+						}
+					}
+				});
+			}
+			return false;
+		});
+		$("#btnReturn").click(function () {
+			window.parent.frameReturnByClose();
+		});
+	});
+
+</script>
+<div class="mvctool bgb">
+	@Html.ToolButton("btnSave", "fa fa-save", "保存", "Save", true)
+	@Html.ToolButton("btnReturn", "fa fa-reply", "返回", false)
+</div>
+@using (Html.BeginForm())
+{
+	<table class="formtable">
+		<tbody>
+			<tr>
+				<th>产品名称:</th>
+				<td>
+					@Html.EditorFor(model => model.ProductName)
+					@Html.ValidationMessageFor(model => model.ProductName)
+				</td>
+			</tr>
+            <tr>
+                <th>公司名称:</th>
+                <td>
+                    @Html.DropDownList("Companyid")
+                </td>
+            </tr>
+			<tr>
+				<th>业务员:</th>
+				<td>
+                   <select id="UserId" name="UserId">
+
+
+                   </select>
+				</td>
+			</tr>
+			<tr>
+				<th>费率:</th>
+				<td>
+					@Html.EditorFor(model => model.Rate)
+					@Html.ValidationMessageFor(model => model.Rate)
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+}
+<script>
+  
+    $("select[name='Companyid']").change(function () {
+        selectedCompany = $(this).val();
+        ShowUser(selectedCompany)
+
+        //ShowUserWithSelectedCompany(selectedCompany);
+    });
+    //function ShowUserWithSelectedCompany(company) {
+    //    $.ajax({
+    //        url: "/Administrator/GetUserList?company=" + company,
+    //        type:"post"
+    //    });
+    //}
+
+    function ShowUser(companyId) {
+        $.ajax({
+            url: "/Administrator/GetUserList?company=" + companyId,
+            type: "post",
+            success: function (data)
+            {
+                $("#UserId").html(data);
+            }
+        });
+    }
+    var selectedCompany = $("#Companyid").val();
+    ShowUser(selectedCompany);
+    </script>

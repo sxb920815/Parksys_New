@@ -1,0 +1,93 @@
+﻿@model MCLYGV3.DB.M_Order
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<table class="formtable">
+	<tbody>
+		<tr>
+			<th>订单编号:</th>
+			<td>@Html.DisplayFor(model => model.OrderCode)</td>
+		</tr>
+		<tr>
+			<th>用户ID:</th>
+			<td>@Html.DisplayFor(model => model.UserId)</td>
+		</tr>
+		<tr>
+			<th>订单步骤。0未支付1已支付2已过期:</th>
+			<td>@Html.DisplayFor(model => model.OrderStep)</td>
+		</tr>
+		<tr>
+			<th>投保人公司名:</th>
+			<td>@Html.DisplayFor(model => model.InsuredName)</td>
+		</tr>
+		<tr>
+			<th>投保人公司编号:</th>
+			<td>@Html.DisplayFor(model => model.IdentifyNumber)</td>
+		</tr>
+		<tr>
+			<th>证件图片ID:</th>
+			<td>@Html.DisplayFor(model => model.IdentifyPic)</td>
+		</tr>
+		<tr>
+			<th>初次总保费:</th>
+			<td>@Html.DisplayFor(model => model.FirstModalPremium)</td>
+		</tr>
+		<tr>
+			<th>初次总保额:</th>
+			<td>@Html.DisplayFor(model => model.FirstdutyAount)</td>
+		</tr>
+		<tr>
+			<th>当前总保费:</th>
+			<td>@Html.DisplayFor(model => model.NowdutyAount)</td>
+		</tr>
+		<tr>
+			<th>当前总保额:</th>
+			<td>@Html.DisplayFor(model => model.NowModalPremium)</td>
+		</tr>
+		<tr>
+			<th>保险公司。CT或者PA:</th>
+			<td>@Html.DisplayFor(model => model.InsuranceCompany)</td>
+		</tr>
+		<tr>
+			<th>见费出单。Y或者N:</th>
+			<td>@Html.DisplayFor(model => model.CodInd)</td>
+		</tr>
+		<tr>
+			<th>保单类别。Group:</th>
+			<td>@Html.DisplayFor(model => model.OrderType)</td>
+		</tr>
+		<tr>
+			<th>保险生效时间:</th>
+			<td>@Html.DisplayFor(model => model.StartTime)</td>
+		</tr>
+		<tr>
+			<th>保险失效时间:</th>
+			<td>@Html.DisplayFor(model => model.EndTime)</td>
+		</tr>
+		<tr>
+			<th>保险提交时间:</th>
+			<td>@Html.DisplayFor(model => model.BuyTime)</td>
+		</tr>
+		<tr>
+			<th>付款返回时间:</th>
+			<td>@Html.DisplayFor(model => model.PayTime)</td>
+		</tr>
+		<tr>
+			<th>投保月份:</th>
+			<td>@Html.DisplayFor(model => model.applyMonth)</td>
+		</tr>
+		<tr>
+			<th>保单号:</th>
+			<td>@Html.DisplayFor(model => model.PolicyNo)</td>
+		</tr>
+		<tr>
+			<th>投保计划:</th>
+			<td>@Html.DisplayFor(model => model.Plan)</td>
+		</tr>
+		<tr>
+			<th>子订单列表:</th>
+			<td>@Html.DisplayFor(model => model.Child)</td>
+		</tr>
+
+	</tbody>
+</table>

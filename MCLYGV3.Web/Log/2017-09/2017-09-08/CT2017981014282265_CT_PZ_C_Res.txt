@@ -1,0 +1,46 @@
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"标的职业与被保险人职业不一致","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"批改生效日期必须晚于当前日期,晚于起保日期，早于终保日期","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"该被保险人已经存在，不能再次批增","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"远程服务器返回错误: (500) 内部服务器错误。","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"该被保险人已经存在，不能再次批增","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"该被保险人已经存在，不能再次批增","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"该被保险人已经存在，不能再次批增","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"所传保费变化量之和必须等于总保费","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"所传保费变化量之和必须等于总保费","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"所传保费变化量之和必须等于总保费","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"该被保险人已经存在，不能再次批增","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"该被保险人已经存在，不能再次批增","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":"核心的总保费和批改的总保费不一致！","ReturnCode":"505","Success":false,"Data":null}

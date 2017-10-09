@@ -1,0 +1,125 @@
+http://183.224.42.121:8080/echannel/cxf/acciSavePartyService
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <saveParty xmlns="http://saveProposal.accident.provider.app.thirdparty.echannel.ebiz.isoftstone.com/">
+      <saveParty xmlns="">
+        
+
+  <Head>
+    <partnerCode>MCLY</partnerCode>
+    <passWord>MCLY20170103</passWord>
+    <queryId>578ebbf32ecf464098249cfdf2c91831</queryId>
+    <requestType>00001</requestType>
+    <userName>MCLY</userName>
+  </Head>
+  <Main>
+    <argueSolution>2</argueSolution>
+    <codInd>Y</codInd>
+    <commissionRatio>0.6132</commissionRatio>
+    <currency>CNY</currency>
+    <endDate>2018-09-20 23:59:59</endDate>
+    <operateDate>2017-09-20</operateDate>
+    <planCode>MCLY114401</planCode>
+    <shortRate>1.00</shortRate>
+    <startDate>2017-09-21 00:00:00</startDate>
+    <sumGrossPremium>1333.62</sumGrossPremium>
+    <sumInsured>630300</sumInsured>
+  </Main>
+  <RelatedParty>
+    <birthDate>0000-00-00</birthDate>
+    <businessSource />
+    <contactName>杭州师范大学</contactName>
+    <contactPhone>13888888888</contactPhone>
+    <officePhone>13888888888</officePhone>
+    <educationBackground> </educationBackground>
+    <email />
+    <identifyNumber>615441</identifyNumber>
+    <identifyType>1</identifyType>
+    <insuredAddress />
+    <insuredName>杭州师范大学</insuredName>
+    <insuredType>2</insuredType>
+    <uWCount>1</uWCount>
+  </RelatedParty>
+  <PlanList>
+    <Plan>
+      <ItemAcci>
+        <insuredBusinessSource>0701014</insuredBusinessSource>
+        <quantity>3</quantity>
+        <rationType>N</rationType>
+      </ItemAcci>
+      <ItemKindList>
+        <ItemKind>
+          <grossPremium>300</grossPremium>
+          <kindCode>1144001</kindCode>
+          <kindInd>1</kindInd>
+          <rate>0.0015</rate>
+          <sumInsured>200000</sumInsured>
+        </ItemKind>
+        <ItemKind>
+          <grossPremium>91.43</grossPremium>
+          <kindCode>1144002</kindCode>
+          <kindInd>2</kindInd>
+          <rate>0.0091</rate>
+          <sumInsured>10000</sumInsured>
+        </ItemKind>
+        <ItemKind>
+          <grossPremium>53.11</grossPremium>
+          <kindCode>1144003</kindCode>
+          <kindInd>2</kindInd>
+          <rate>0.5311</rate>
+          <sumInsured>100</sumInsured>
+        </ItemKind>
+      </ItemKindList>
+      <riskRealateParyList>
+        <riskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1994-06-01</birthday>
+          <clientCName>马军胜</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>610632199406015930</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0701014</insuredBusinessSource>
+          <postCode />
+          <sex>1</sex>
+          <email />
+          <homeAddress />
+          <clientCNameBenefit>法定</clientCNameBenefit>
+        </riskRealatePary>
+        <riskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1988-06-16</birthday>
+          <clientCName>李香巧</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>653124198806160801</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0701014</insuredBusinessSource>
+          <postCode />
+          <sex>2</sex>
+          <email />
+          <homeAddress />
+          <clientCNameBenefit>法定</clientCNameBenefit>
+        </riskRealatePary>
+        <riskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1980-07-16</birthday>
+          <clientCName>王涵桃</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>15042119800716284X</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0701014</insuredBusinessSource>
+          <postCode />
+          <sex>2</sex>
+          <email />
+          <homeAddress />
+          <clientCNameBenefit>法定</clientCNameBenefit>
+        </riskRealatePary>
+      </riskRealateParyList>
+    </Plan>
+  </PlanList>
+
+      </saveParty>
+    </saveParty>
+  </soap:Body>
+</soap:Envelope>
+

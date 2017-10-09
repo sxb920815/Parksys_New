@@ -1,0 +1,85 @@
+﻿@model MCLYGV3.DB.M_UserInfo
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<script type="text/javascript">
+	$(function () {
+		$("#btnSave").click(function () {
+			if ($("form").valid()) {
+				var queryArray = $("form").serializeObject();
+				var jsonString = JSON.stringify(queryArray);
+				$.ajax({
+					url: "@Url.Action("EditUserInfo")",
+					type: "Post",
+					data: jsonString,
+					dataType: "json",
+					success: function (data) {
+						if (data.type == 0) {
+							window.parent.frameReturnByMes(data.message);
+							window.parent.frameReturnByReload(true);
+							window.parent.frameReturnByClose()
+						}
+						else {
+							window.parent.frameReturnByMes(data.message);
+						}
+					}
+				});
+			}
+			return false;
+		});
+		$("#btnReturn").click(function () {
+			window.parent.frameReturnByClose();
+		});
+	});
+</script>
+<div class="mvctool bgb">
+	@Html.ToolButton("btnSave", "fa fa-save", "保存", "Save", true)
+	@Html.ToolButton("btnReturn", "fa fa-reply", "返回", false)
+</div>
+@using (Html.BeginForm())
+{
+
+	@Html.HiddenFor(model => model.ID)
+
+
+	<table class="formtable">
+		<tbody>
+			<tr>
+				<th>用户名:</th>
+				<td>
+					@Html.EditorFor(model => model.UserName)
+					@Html.ValidationMessageFor(model => model.UserName)
+				</td>
+			</tr>
+			<tr>
+				<th>真实姓名:</th>
+				<td>
+					@Html.EditorFor(model => model.RealName)
+					@Html.ValidationMessageFor(model => model.RealName)
+				</td>
+			</tr>
+			<tr>
+				<th>电话号码:</th>
+				<td>
+					@Html.EditorFor(model => model.Tel)
+					@Html.ValidationMessageFor(model => model.Tel)
+				</td>
+			</tr>
+			<tr>
+				<th>信箱:</th>
+				<td>
+					@Html.EditorFor(model => model.Email)
+					@Html.ValidationMessageFor(model => model.Email)
+				</td>
+			</tr>
+			<tr>
+				<th>所属公司:</th>
+				<td>
+					@Html.DropDownList("InCompanySelect")
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+}

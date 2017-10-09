@@ -1,0 +1,132 @@
+http://183.224.42.121:8080/echannel/cxf/groupCorrectSerivce
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gro="http://groupCorrect.accident.provider.app.thirdparty.echannel.ebiz.isoftstone.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<gro:operateCorrect>
+			<!--Optional:-->
+			<operateCorrect>
+				
+
+  <Head>
+    <partnerCode>MCLY</partnerCode>
+    <passWord>MCLY20170103</passWord>
+    <queryId>44eea3237f204190bc374722c8f079e4</queryId>
+    <requestType>00001</requestType>
+    <userName>MCLY</userName>
+  </Head>
+  <Main>
+    <policyNo>6000000114420170003366</policyNo>
+    <sumPremium>68.79</sumPremium>
+    <validDate>2017-09-15</validDate>
+  </Main>
+  <CorrPlanList>
+    <corrPlan>
+      <RiskRealateParyList>
+        <RiskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1981-05-03</birthday>
+          <changeInsured>68.79</changeInsured>
+          <clientCName>zzq</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>140427198105036296</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0102002</insuredBusinessSource>
+          <modifyFlag>I</modifyFlag>
+          <sex>1</sex>
+        </RiskRealatePary>
+      </RiskRealateParyList>
+    </corrPlan>
+  </CorrPlanList>
+
+			</operateCorrect>
+		</gro:operateCorrect>
+	</soapenv:Body>
+</soapenv:Envelope>
+http://183.224.42.121:8080/echannel/cxf/groupCorrectSerivce
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gro="http://groupCorrect.accident.provider.app.thirdparty.echannel.ebiz.isoftstone.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<gro:operateCorrect>
+			<!--Optional:-->
+			<operateCorrect>
+				
+
+  <Head>
+    <partnerCode>MCLY</partnerCode>
+    <passWord>MCLY20170103</passWord>
+    <queryId>3d8b4a52343245c08ed3e9a70cd99879</queryId>
+    <requestType>00001</requestType>
+    <userName>MCLY</userName>
+  </Head>
+  <Main>
+    <policyNo>6000000114420170003366</policyNo>
+    <sumPremium>68.79</sumPremium>
+    <validDate>2017-09-15</validDate>
+  </Main>
+  <CorrPlanList>
+    <corrPlan>
+      <RiskRealateParyList>
+        <RiskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1976-03-12</birthday>
+          <changeInsured>68.79</changeInsured>
+          <clientCName>zzq</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>130825197603128276</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0102002</insuredBusinessSource>
+          <modifyFlag>I</modifyFlag>
+          <sex>1</sex>
+        </RiskRealatePary>
+      </RiskRealateParyList>
+    </corrPlan>
+  </CorrPlanList>
+
+			</operateCorrect>
+		</gro:operateCorrect>
+	</soapenv:Body>
+</soapenv:Envelope>
+http://183.224.42.121:8080/echannel/cxf/groupCorrectSerivce
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gro="http://groupCorrect.accident.provider.app.thirdparty.echannel.ebiz.isoftstone.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<gro:operateCorrect>
+			<!--Optional:-->
+			<operateCorrect>
+				
+
+  <Head>
+    <partnerCode>MCLY</partnerCode>
+    <passWord>MCLY20170103</passWord>
+    <queryId>d95d7f6d47fe40839f6582e549a77ce9</queryId>
+    <requestType>00001</requestType>
+    <userName>MCLY</userName>
+  </Head>
+  <Main>
+    <policyNo>6000000114420170003366</policyNo>
+    <sumPremium>68.79</sumPremium>
+    <validDate>2017-09-15</validDate>
+  </Main>
+  <CorrPlanList>
+    <corrPlan>
+      <RiskRealateParyList>
+        <RiskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1980-06-27</birthday>
+          <changeInsured>68.79</changeInsured>
+          <clientCName>zzq</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>222402198006279537</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0102002</insuredBusinessSource>
+          <modifyFlag>I</modifyFlag>
+          <sex>1</sex>
+        </RiskRealatePary>
+      </RiskRealateParyList>
+    </corrPlan>
+  </CorrPlanList>
+
+			</operateCorrect>
+		</gro:operateCorrect>
+	</soapenv:Body>
+</soapenv:Envelope>

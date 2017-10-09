@@ -1,0 +1,41 @@
+﻿@model MCLYGV3.DB.M_Role
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<table class="formtable">
+	<tbody>
+		<tr>
+			<th>ID:</th>
+			<td>@Html.DisplayFor(model => model.ID)</td>
+		</tr>
+		<tr>
+			<th>角色名称:</th>
+			<td>@Html.DisplayFor(model => model.Name)</td>
+		</tr>
+		<tr>
+			<th>描述:</th>
+			<td>@Html.DisplayFor(model => model.Description)</td>
+		</tr>
+		<tr>
+			<th>创建时间:</th>
+			<td>@Html.DisplayFor(model => model.CreateTime)</td>
+		</tr>
+		<tr>
+			<th>创建用户:</th>
+			<td>@Html.DisplayFor(model => model.CreatePerson)</td>
+		</tr>
+		<tr>
+			<th>是否可用:</th>
+			<td>@Html.DisplayFor(model => model.Enabled)</td>
+		</tr>
+		<tr>
+			<th>所属用户:</th>
+			<td>@Html.DisplayFor(model => model.AdminUser)</td>
+		</tr>
+		<tr>
+			<th>权限操作列表:</th>
+			<td>@Html.DisplayFor(model => model.Operation)</td>
+		</tr>
+
+	</tbody>
+</table>

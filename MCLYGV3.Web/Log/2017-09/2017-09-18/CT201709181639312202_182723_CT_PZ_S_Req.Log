@@ -1,0 +1,56 @@
+http://183.224.42.121:8080/echannel/cxf/groupCorrectSerivce
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gro="http://groupCorrect.accident.provider.app.thirdparty.echannel.ebiz.isoftstone.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<gro:operateCorrect>
+			<!--Optional:-->
+			<operateCorrect>
+				
+
+  <Head>
+    <partnerCode>MCLY</partnerCode>
+    <passWord>MCLY20170103</passWord>
+    <queryId>79f4668906e147a5b577242e8ae75cfa</queryId>
+    <requestType>00001</requestType>
+    <userName>MCLY</userName>
+  </Head>
+  <Main>
+    <policyNo>6000000114420170003381</policyNo>
+    <sumPremium>115.28</sumPremium>
+    <validDate>2017-09-19</validDate>
+  </Main>
+  <CorrPlanList>
+    <corrPlan>
+      <RiskRealateParyList>
+        <RiskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1991-05-31</birthday>
+          <changeInsured>57.64</changeInsured>
+          <clientCName>诸飞阳</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>370322199105318963</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0102003</insuredBusinessSource>
+          <modifyFlag>I</modifyFlag>
+          <sex>2</sex>
+        </RiskRealatePary>
+        <RiskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1982-03-09</birthday>
+          <changeInsured>57.64</changeInsured>
+          <clientCName>韦涛华</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>370923198203096393</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0102003</insuredBusinessSource>
+          <modifyFlag>I</modifyFlag>
+          <sex>1</sex>
+        </RiskRealatePary>
+      </RiskRealateParyList>
+    </corrPlan>
+  </CorrPlanList>
+
+			</operateCorrect>
+		</gro:operateCorrect>
+	</soapenv:Body>
+</soapenv:Envelope>

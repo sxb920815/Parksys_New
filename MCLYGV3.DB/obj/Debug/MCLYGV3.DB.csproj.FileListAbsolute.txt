@@ -1,0 +1,13 @@
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\MCLYGV3.DB.dll.config
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\MCLYGV3.DB.dll
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\MCLYGV3.DB.pdb
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\EntityFramework.dll
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\EntityFramework.SqlServer.dll
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\MySql.Data.dll
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\Newtonsoft.Json.dll
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\EntityFramework.xml
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\EntityFramework.SqlServer.xml
+D:\Company\MCYYGroupV3\MCLYGV3.DB\bin\Debug\Newtonsoft.Json.xml
+D:\Company\MCYYGroupV3\MCLYGV3.DB\obj\Debug\MCLYGV3.DB.dll
+D:\Company\MCYYGroupV3\MCLYGV3.DB\obj\Debug\MCLYGV3.DB.pdb

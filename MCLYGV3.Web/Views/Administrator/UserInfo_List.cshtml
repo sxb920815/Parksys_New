@@ -1,0 +1,238 @@
+﻿@using MCLYGV3.DB
+@model M_AdminUser
+@{
+	Layout = "~/Views/Shared/_BodyLayout.cshtml";
+}
+<div class="mvctool">
+	<input id="txtQuery" type="text" class="searchText" />
+	<a id="btnQuery" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-search" style="font-size:14px"></span><span style="font-size:12px">查询</span></span></a><div class="datagrid-btn-separator"></div>
+	<a id="btnCreate" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-plus" style="font-size:14px"></span><span style="font-size:12px">创建</span></span></a><div class="datagrid-btn-separator"></div>
+	@*<a id="btnDetails" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-list" style="font-size:14px"></span><span style="font-size:12px">详细</span></span></a><div class="datagrid-btn-separator"></div>*@
+	<a id="btnEdit" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-pencil" style="font-size:14px"></span><span style="font-size:12px">修改</span></span></a><div class="datagrid-btn-separator"></div>
+	<a id="btnDelete" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-trash" style="font-size:14px"></span><span style="font-size:12px">删除</span></span></a><div class="datagrid-btn-separator"></div>
+    <a id="btnReset" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-undo" style="font-size:14px"></span><span style="font-size:12px">重置密码</span></span></a><div class="datagrid-btn-separator"></div>
+
+</div>
+<table id="List"></table>
+<div id="Pager"></div>
+<div id="modalwindow" class="easyui-window" data-options="modal:true,closed:true,minimizable:false,shadow:false"></div>
+@*Jqgrid*@
+<script type="text/javascript">
+	//ifram 返回
+	function frameReturnByClose() {
+		$("#modalwindow").window('close');
+	}
+	function frameReturnByReload(flag) {
+		if (flag)
+			$("#List").datagrid('load');
+		else
+			$("#List").datagrid('reload');
+	}
+	function frameReturnByMes(mes) {
+		$.messageBox5s('提示', mes);
+	}
+
+	$(function () {
+		$('#List').datagrid({
+			url: '/Administrator/GetUserInfoList',
+			width: SetGridWidthSub(10),
+			methord: 'POST',
+			height: SetGridHeightSub(45),
+			fitColumns: true,
+			sortName: 'ID',
+			sortOrder: 'desc',
+			idField: 'ID',
+			pageSize: 15,
+			pageList: [15, 20, 30, 40, 50],
+			pagination: true,
+			striped: false, //奇偶行是否区分
+			singleSelect: true,//单选模式
+			columns: [[
+				{ field: 'ID', title: 'ID', sortable: true },
+				{ field: 'UserName', title: '用户名', sortable: true },
+				{ field: 'RealName', title: '真实姓名', sortable: true },
+				{ field: 'Tel', title: '电话号码', sortable: true },
+				{ field: 'Email', title: '信箱', sortable: true },
+				{ field: 'InCompany', title: '所属公司', sortable: false,
+				    formatter: function (value, row, index)
+				    {
+				        return row.InCompany.CompanyName;
+				    //console.log(RoleNameStr);
+				    }
+				},
+
+			]]
+		});
+	});
+	
+</script>
+@Html.Partial("~/Views/Shared/_Partial_AutoGrid.cshtml")
+@*operation*@
+<script type="text/javascript">
+	
+	var AdminUserId=@Model.ID;
+	
+	function IsTrueOrFalse(value) {
+		if (value) {
+			return "<span class='label label-success'>是</span>";
+		} else {
+			return "<span class='label label-error'>否</span>";
+		}
+	}
+	function IsTrueOrFalse2(value) {
+		if (value) {
+			return "<span class='color-green fa fa-circle'></span>";
+		} else {
+			return "<span class='color-gray fa fa-circle-o'></span>";
+		}
+	}
+	$(function () {
+		
+		$("#btnQuery").click(function () {
+			var queryStr = $("#txtQuery").val();
+			//如果查询条件为空默认查询全部
+			if (queryStr == null) {
+				queryStr = "";
+			}
+			$('#List').datagrid({ url: '/Administrator/GetUserInfoList?queryStr=' + encodeURI(queryStr) });
+		});
+
+		$("#btnCreate").click(function () 
+		{
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Add", function (data) 
+			{
+				if (data.type == 0)
+				{
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0'' src='/Administrator/UserInfo_Add'></iframe>");
+					$("#modalwindow").window({ title: '创建', width: 500, height: 450, iconCls: 'fa fa-plus' }).window('open');
+				}
+				else
+				{
+					$.messageBox5s('提示', data.message);
+				}
+			}, "json");
+		});
+
+
+		$("#btnDetails").click(function () 
+		{
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Details", function (data) 
+			{
+				if (data.type == 0)
+				{
+					var rows = $('#List').datagrid('getSelections');
+					if (rows.length > 1) {
+						$.messageBox5s('提示', '只能选择一个进行查看');
+						return;
+					}
+					if (rows.length == 0) {
+						$.messageBox5s('提示', '请选择一个进行查看');
+						return;
+					}
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/UserInfo_Detail?ID=" + rows[0].ID + "'></iframe>");
+					$("#modalwindow").window({ title: '详细', width: 500, height: 450, iconCls: 'fa fa-list' }).window('open');
+				}
+				else
+				{
+					$.messageBox5s('提示', data.message);
+				}
+			}, "json");
+		});
+		
+
+		$("#btnEdit").click(function () 
+		{
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Edit", function (data) 
+			{
+				if (data.type == 0)
+				{
+					var rows = $('#List').datagrid('getSelections');
+					if (rows.length > 1) {
+						$.messageBox5s('提示', '只能选择一个进行编辑');
+						return;
+					}
+					if (rows.length == 0) {
+						$.messageBox5s('提示', '请选择一个进行编辑');
+						return;
+					}
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/UserInfo_Edit?id=" + rows[0].ID + "'></iframe>");
+					$("#modalwindow").window({ title: '编辑', width: 500, height: 450, iconCls: 'fa fa-list' }).window('open');
+				}
+				else
+				{
+					$.messageBox5s('提示', data.message);
+				}
+			}, "json");
+		});
+
+		
+		$("#btnDelete").click(function () 
+		{
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Del", function (data) 
+			{
+				if (data.type == 0)
+				{
+					var ids = [];
+					var rows = $('#List').datagrid('getSelections');
+					for (var i = 0; i < rows.length; i++) {
+						ids.push(rows[i].ID);
+					}
+					var idsStr = ids.join(',');
+					if (rows.length > 0) {
+						$.messager.confirm('提示', '你要删除所选择的记录吗?', function (r) {
+							if (r) {
+								$.post("/Administrator/DelUserInfo?id=" + idsStr, function (data) {
+									if (data.type == 0)
+										$("#List").datagrid('reload');
+									$('#List').datagrid('clearSelections');
+									$.messageBox5s('提示', data.message);
+								}, "json");
+							}
+						});
+					}
+					else {
+						$.messageBox5s('提示', '请选择要操作的记录');
+					}
+				}
+				else
+				{
+					$.messageBox5s('提示', data.message);
+				}
+			}, "json");
+		});
+	});
+	$("#btnReset").click(function () 
+	{
+	    $.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Del", function (data) 
+	    {
+	        if (data.type == 0)
+	        {
+	            var ids = [];
+	            var rows = $('#List').datagrid('getSelections');
+	            for (var i = 0; i < rows.length; i++) {
+	                ids.push(rows[i].ID);
+	            }
+	            var idsStr = ids.join(',');
+	            if (rows.length > 0) {
+	                $.messager.confirm('提示', '你要重置密码为123456吗?', function (r) {
+	                    if (r) {
+	                        $.post("/Administrator/PswReset?id=" + idsStr, function (data) {
+	                            if (data.type == 0)
+	                                $("#List").datagrid('reload');
+	                            $('#List').datagrid('clearSelections');
+	                            $.messageBox5s('提示', data.message);
+	                        }, "json");
+	                    }
+	                });
+	            }
+	            else {
+	                $.messageBox5s('提示', '请选择要操作的记录');
+	            }
+	        }
+	        else
+	        {
+	            $.messageBox5s('提示', data.message);
+	        }
+	    }, "json");
+	});
+</script>

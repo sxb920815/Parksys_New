@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<GroupCorrectResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Head>
+    <ResponseMessage>标的职业与被保险人职业不一致</ResponseMessage>
+    <requestType>12003</requestType>
+    <ResponseCode>9027</ResponseCode>
+  </Head>
+</GroupCorrectResponse>

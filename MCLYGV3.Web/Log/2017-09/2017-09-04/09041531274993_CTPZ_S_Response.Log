@@ -1,0 +1,32 @@
+﻿<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:operateCorrectResponse xmlns:ns2="http://groupCorrect.accident.provider.app.thirdparty.echannel.ebiz.isoftstone.com/"><return><responseBoby><responseHead><errorMessage>成功</errorMessage><requestType>12003</requestType><responseCode>0000</responseCode></responseHead><_return>
+<ftrNo>01000170904018845</ftrNo><payBackFlag>1</payBackFlag><payment>80</payment>
+
+<randomNo>93489446578158144018782116709683</randomNo>
+
+</_return></responseBoby></return></ns2:operateCorrectResponse></soap:Body></soap:Envelope>
+
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:savePartyResponse xmlns:ns2="http://saveProposal.accident.provider.app.thirdparty.echannel.ebiz.isoftstone.com/"><return><responseBody><responseHead><errorMessage>成功</errorMessage><requestType>00001</requestType><responseCode>0000</responseCode></responseHead><return>
+
+<ftrno>01000170904018845</ftrno></return></responseBody></return></ns2:savePartyResponse></soap:Body></soap:Envelope>
+
+
+
+
+
+ <policyNo></policyNo>
+6000000114420170003314
+6000000114420170003314
+
+
+93489446578158144018782116709683
+01000170904018845
+
+
+endorNo=2000000114420170000401&
+policyNo=6000000114420170003314&
+orderid=
+01000170904018845
+
+

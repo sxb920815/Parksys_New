@@ -1,0 +1,9 @@
+[UserID:1]
+
+{"policyNo":"6000000114420170003366","sumPremium":68.79,"validDate":"2017-09-15 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"zzq","identifyNo":"140427198105036296","ProfessionName":"畜牧场经营者(亲自作业)","insuredBusinessSource":"0102002","changeInsured":68.79,"isId":true}]}
+[UserID:1]
+
+{"policyNo":"6000000114420170003366","sumPremium":68.79,"validDate":"2017-09-15 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"zzq","identifyNo":"130825197603128276","ProfessionName":"畜牧场经营者(亲自作业)","insuredBusinessSource":"0102002","changeInsured":68.79,"isId":true}]}
+[UserID:1]
+
+{"policyNo":"6000000114420170003366","sumPremium":68.79,"validDate":"2017-09-15 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"zzq","identifyNo":"222402198006279537","ProfessionName":"畜牧场经营者(亲自作业)","insuredBusinessSource":"0102002","changeInsured":68.79,"isId":true}]}

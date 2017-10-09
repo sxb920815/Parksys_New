@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
+using System.Linq;
+using System.Text;
+
+namespace <%NameSpaceName%>.DB
+{
+
+	/// <summary>
+	/// <%ExpTable.Explain%>数据库操作类
+	/// </summary>
+	public partial class B_<%ExpTable.TableName%>
+	{
+		/// <summary>
+		/// 添加<%ExpTable.Explain%>
+		/// </summary>
+		<%ParamExplain%>
+		/// <returns></returns>
+		public static M_<%ExpTable.TableName%> Add(<%Param%>)
+		{
+			M_<%ExpTable.TableName%> <%ExpTable.TableName%>Obj = new M_<%ExpTable.TableName%>();
+			<%ParamToObj%>
+			return Add(<%ExpTable.TableName%>Obj);
+		}
+
+		/// <summary>
+		/// 添加<%ExpTable.Explain%>
+		/// </summary>
+		/// <param name="<%ExpTable.TableName%>Obj"><%ExpTable.Explain%>实体</param>
+		/// <returns></returns>
+		public static M_<%ExpTable.TableName%> Add(M_<%ExpTable.TableName%> <%ExpTable.TableName%>Obj)
+		{
+			using (DBContext db = new DBContext())
+			{
+				try
+				{
+					<%AttachChild%>
+					db.<%ExpTable.TableName%>List.Add(<%ExpTable.TableName%>Obj);
+					int result = db.SaveChanges();
+					return <%ExpTable.TableName%>Obj;
+				}
+				catch (DbEntityValidationException ex)
+				{
+					StringBuilder sb = new StringBuilder();
+					foreach (var item in ex.EntityValidationErrors)
+					{
+						foreach (var item2 in item.ValidationErrors)
+						{
+							sb.Append($"PropertyName:{item2.PropertyName},{item2.ErrorMessage}\r\n\r\n");
+						}
+					}
+					Log.SystemWrite("【<%ExpTable.TableName%>】\r\n" + ex.Message + "\r\n\r\n" + sb.ToString());
+					return null;
+				}
+			}
+		}
+	}
+}

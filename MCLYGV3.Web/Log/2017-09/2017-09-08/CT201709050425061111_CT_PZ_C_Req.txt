@@ -1,0 +1,9 @@
+[UserID:136]
+
+{"policyNo":"6000000114420170003321","sumPremium":"79.340","validDate":"2017-09-06 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"周恩来","identifyNo":"610632199406015930","ProfessionName":"农场经营者（不亲自作业）","insuredBusinessSource":"0101001","changeInsured":"79.34"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003321","sumPremium":"79.340","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"小毛毛","identifyNo":"653124198806160801","ProfessionName":"农场经营者（不亲自作业）","insuredBusinessSource":"0101001","changeInsured":"79.34"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003321","sumPremium":"79.340","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"毛泽西","identifyNo":"330514198502142574","ProfessionName":"农场经营者（不亲自作业）","insuredBusinessSource":"0101001","changeInsured":"79.34"}]}

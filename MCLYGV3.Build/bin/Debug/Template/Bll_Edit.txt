@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
+using System.Linq;
+using System.Text;
+
+namespace <%NameSpaceName%>.DB
+{
+
+	/// <summary>
+	/// <%ExpTable.Explain%>数据库操作类
+	/// </summary>
+	public partial class B_<%ExpTable.TableName%>
+	{
+		/// <summary>
+		/// 修改<%ExpTable.Explain%>
+		/// </summary>
+		/// <param name="<%ExpTable.TableName%>Obj"><%ExpTable.Explain%>实体</param>
+		/// <returns></returns>
+		public static bool UpdateNormal(M_<%ExpTable.TableName%> <%ExpTable.TableName%>Obj)
+		{
+			using (DBContext db = new DBContext())
+			{
+				try
+				{
+					db.<%ExpTable.TableName%>List.Attach(<%ExpTable.TableName%>Obj);
+					DbEntityEntry<M_<%ExpTable.TableName%>> entry = db.Entry(<%ExpTable.TableName%>Obj);
+					entry.State = EntityState.Modified;
+					db.SaveChanges();
+					return true;
+				}
+				catch (Exception ex)
+				{
+					Log.SystemWrite("【<%ExpTable.TableName%>】\r\n" + ex.Message + "\r\n" + ex.ToString());
+					return false;
+				}
+			}
+		}
+
+		/// <summary>
+		/// 修改<%ExpTable.Explain%>
+		/// </summary>
+		/// <param name="<%ExpTable.TableName%>Obj"><%ExpTable.Explain%>实体</param>
+		/// <returns></returns>
+		public static bool Update(M_<%ExpTable.TableName%> Edit<%ExpTable.TableName%>Obj)
+		{
+			using (DBContext db = new DBContext())
+			{
+				try
+				{
+					M_<%ExpTable.TableName%> <%ExpTable.TableName%>Obj = db.<%ExpTable.TableName%>List.Find(<%ParentFind%>);
+					<%EditObjToObj%>
+					int count = db.SaveChanges();
+					return true;
+				}
+				catch (DbEntityValidationException ex)
+				{
+					StringBuilder sb = new StringBuilder();
+					foreach (var item in ex.EntityValidationErrors)
+					{
+						foreach (var item2 in item.ValidationErrors)
+						{
+							sb.Append($"PropertyName:{item2.PropertyName},{item2.ErrorMessage}\r\n\r\n");
+						}
+					}
+					Log.SystemWrite("【<%ExpTable.TableName%>】\r\n" + ex.Message + "\r\n\r\n" + sb.ToString());
+					return false;
+				}
+			}
+		}
+	}
+}

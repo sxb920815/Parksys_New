@@ -1,0 +1,137 @@
+﻿@using MCLYGV3.DB
+@model M_AdminUser
+@{
+	Layout = "~/Views/Shared/_BodyLayout.cshtml";
+}
+
+
+<div class="mvctool">
+	<span style="font-size:16px;float: left;height:50px;" class="l-btn-text">开始时间</span><input id="startTime1" type="date" class="searchText" style="float: left;height:27px;" />
+	<span style="font-size:16px;float: left;height:50px;" class="l-btn-text">结束时间</span><input id="endTime1" type="date" class="searchText" style="float: left;height:27px;" />
+	<select id="companySelect" style="float:left;height:30px;">
+		<option value="All">全部公司</option>
+		<option value="PA">平安</option>
+		<option value="CT">诚泰</option>
+	</select>
+	<a id="btnDownLoad1" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-download" style="font-size:14px"></span><span style="font-size:12px">下载EXCEL</span></span></a>
+</div>
+<br>
+<div class="mvctool">
+	<span style="font-size:16px;float: left;" class="l-btn-text">开始时间</span><input id="startTime2" type="date" class="searchText" style="float: left;height:27px;" />
+	<span style="font-size:16px;float: left;" class="l-btn-text">结束时间</span><input id="endTime2" type="date" class="searchText" style="float: left;height:27px;" />
+	@Html.DropDownList("UserDropDownList", ViewBag.UserList as IEnumerable<SelectListItem>, new { @style = "float:left;height:30px;" })
+	<a id="btnDownLoad2" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-download" style="font-size:14px"></span><span style="font-size:12px">下载EXCEL</span></span></a>
+</div>
+<div id="Pager"></div>
+<div id="modalwindow" class="easyui-window" data-options="modal:true,closed:true,minimizable:false,shadow:false"></div>
+@*Jqgrid*@
+<script type="text/javascript">
+	//ifram 返回
+	function frameReturnByClose() {
+		$("#modalwindow").window('close');
+	}
+	function frameReturnByReload(flag) {
+		if (flag)
+			$("#List").datagrid('load');
+		else
+			$("#List").datagrid('reload');
+	}
+	function frameReturnByMes(mes) {
+		$.messageBox5s('提示', mes);
+	}
+
+</script>
+@Html.Partial("~/Views/Shared/_Partial_AutoGrid.cshtml")
+@*operation*@
+<script type="text/javascript">
+	var AdminUserId=@Model.ID;
+	$("#btnDownLoad1").click(function()
+	{
+		$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=M5_Del", function (data)
+		{
+			if(data.type==0)
+			{
+				var startTime1 = $("#startTime1").val();
+				var endTime1=$("#endTime1").val();
+				var companySelect=$("#companySelect").val();
+				if(startTime1=="")
+				{
+					$.messageBox5s('提示', "下载失败：开始时间不能为空");
+					return;
+				}
+				if(endTime1=="")
+				{
+					$.messageBox5s('提示', "下载失败：结束时间不能为空");
+					return;
+				}
+				$.ajax({
+				    url: "/Administrator/ExcelDownLoadByCompany",
+					type: "Post",
+					data: JSON.stringify({
+						startTime: startTime1,
+						endTime: endTime1,
+						companySelect: companySelect
+					}),
+					dataType: "json",
+					success: function (data) {
+                        console.log(data)
+						if (data.type == 0)
+						{
+						    window.location.href=data.value;
+						}
+						else {
+							$.messageBox5s('提示',data.message);
+						}
+					}
+				});
+				//$.messageBox5s('提示', "下载失败：123");
+
+				//window.location.href="http://www.baidu.com";
+
+
+				//$.post("/Administrator/ExcelDownLoad?startTime="+$("#startTime").val()+"&endTime="+$("#endTime").val()+"&company="+$("#companySelect").val(),function(){
+				//window.location.href="/Administrator/ExcelDownLoadByCompany?startTime="+$("#startTime").val()+"&endTime="+$("#endTime").val()+"&company="+$("#companySelect").val();
+				//});
+			}
+		},"json");
+	});
+	$("#btnDownLoad2").click(function()
+	{
+	    $.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=M5_Del", function (data)
+	    {
+	        var startTime2 = $("#startTime2").val();
+	        var endTime2=$("#endTime2").val();
+	        var user=$("#UserDropDownList").val();
+	        if(data.type==0){
+	            if(startTime1=="")
+	            {
+	                $.messageBox5s('提示', "下载失败：开始时间不能为空");
+	                return;
+	            }
+	            if(endTime1=="")
+	            {
+	                $.messageBox5s('提示', "下载失败：结束时间不能为空");
+	                return;
+	            }
+	            $.ajax({
+	                type:"POST",
+	                url:"/Administrator/ExcelDownLoadByName",
+	                async:false,
+	                data:JSON.stringify({
+	                    startTime:startTime2,
+	                    endTime:endTime2,
+	                    user:user
+	                }),
+	                success:function(data){
+	                    if(data.type==0){
+	                        window.location.href=data.value;
+	                    }
+	                    else{
+	                        $.messageBox5s('提示',data.message);
+	                    }
+	                }
+	            });
+	        }
+	    });
+	});
+</script>

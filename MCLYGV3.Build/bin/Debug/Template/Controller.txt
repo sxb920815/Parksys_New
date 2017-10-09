@@ -1,0 +1,46 @@
+﻿using <%NameSpaceName%>.DB;
+using <%NameSpaceName%>.Models;
+using System.Web.Http;
+
+namespace <%NameSpaceName%>.Controllers
+{
+	/// <summary>
+	/// <%ExpTable.Explain%>
+	/// </summary>
+	public class <%ExpTable.TableName%>Controller : ApiController
+	{
+		/// <summary>
+		/// <%ExpTable.Explain%>添加
+		/// </summary>
+		/// <param name="obj">提交参数</param>
+		/// <returns></returns>
+		[HttpPost]
+		public BaseRes Add(<%ExpTable.TableName%> obj)
+		{
+			using (DBContext db = new DBContext())
+			{
+				BaseRes result = new BaseRes();
+				try
+				{
+					DBM<%ExpTable.TableName%> dbobj = <%ExpTable.TableName%>Convert.GetDBObj(obj);
+					dbobj = <%ExpTable.TableName%>Prep.Prepare(dbobj);
+					result = <%ExpTable.TableName%>Prep.Auth(dbobj);
+					if (result.status != "0")
+						return result;
+					db.<%ExpTable.TableName%>List.Add(dbobj);
+					db.SaveChanges();
+					result.status = "0";
+					result.message = "添加成功";
+					result.ins = dbobj;
+					return result;
+				}
+				catch (System.Exception ex)
+				{
+					result.status = "-1";
+					result.message = ex.Message;
+					return result;
+				}
+			}
+		}
+	}
+}

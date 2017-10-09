@@ -1,0 +1,3 @@
+{"ErrorMessage":"批改生效日期必须晚于当前日期,晚于起保日期，早于终保日期","ReturnCode":"505","Success":false,"Data":null}
+{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":{"Url":"http://183.224.42.121:8080/echannel/chac/YeePay","OrderCoder":"01000170905018953","payType":2,"payAmt":79.34,"vhlType":0,"foreEndURL":"www.baidu.com","randomno":"21094623843866964486283319855685"}}
+{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":{"Url":"http://183.224.42.121:8080/echannel/chac/YeePay","OrderCoder":"01000170905018953","payType":2,"payAmt":79.34,"vhlType":0,"foreEndURL":"www.baidu.com","randomno":"39291088524640666615272809401125"}}

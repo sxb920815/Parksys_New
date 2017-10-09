@@ -1,0 +1,45 @@
+﻿@model MCLYGV3.DB.M_AdminUser
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<table class="formtable">
+	<tbody>
+		<tr>
+			<th>ID:</th>
+			<td>@Html.DisplayFor(model => model.ID)</td>
+		</tr>
+		<tr>
+			<th>用户名:</th>
+			<td>@Html.DisplayFor(model => model.UserName)</td>
+		</tr>
+		<tr>
+			<th>真实姓名:</th>
+			<td>@Html.DisplayFor(model => model.RealName)</td>
+		</tr>
+		<tr>
+			<th>登录密码:</th>
+			<td>@Html.DisplayFor(model => model.PassWord)</td>
+		</tr>
+		<tr>
+			<th>是否超级管理员:</th>
+			<td>@Html.DisplayFor(model => model.IsSupper)</td>
+		</tr>
+		<tr>
+			<th>注册时间:</th>
+			<td>@Html.DisplayFor(model => model.RegTime)</td>
+		</tr>
+		<tr>
+			<th>本次时间:</th>
+			<td>@Html.DisplayFor(model => model.NowTime)</td>
+		</tr>
+		<tr>
+			<th>上次登录时间:</th>
+			<td>@Html.DisplayFor(model => model.LastTime)</td>
+		</tr>
+		<tr>
+			<th>拥有角色:</th>
+			<td>@Html.DisplayFor(model => model.Role)</td>
+		</tr>
+
+	</tbody>
+</table>

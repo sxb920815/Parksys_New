@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8"/>
+    <script src="PageBrace/BackFrame/Js/jquery.min.js"></script>
+</head>
+<body>
+<form action="http://test-api.pingan.com.cn:20080/open/appsvr/property/financialPayments?access_token=3B0E34FDB95B45E194DF5C4A7C0A0CB8" method="POST" target="_blank">
+    <input type="text" id="dataSource" name="dataSource" value="149" placeholder="dataSource"/>
+    <input type="text" id="businessNo" name="businessNo" value="" placeholder="businessNo"/>
+    <input type="text" id="amount" name="amount" value="" placeholder="amount"/>
+    <input type="text" id="currencyNo" name="currencyNo" value="RMB" placeholder="currencyNo"/>
+    <input type="text" id="customerName" name="customerName" value="" placeholder="customerName"/>
+    <input type="text" id="insuredName" name="insuredName" value="" placeholder="insuredName"/>
+    <input type="text" id="callBackURL" name="callBackURL" value="www.baidu.com" placeholder="callBackURL"/>
+    <input type="text" id="documentNo" name="documentNo" value="" placeholder="documentNo"/>
+    <input type="text" id="signMsg" name="signMsg" value="" placeholder="signMsg"/>
+    <input type="button" value="获取加密" onclick="GetSHA256Psd()"/>
+    <button type="submit">请求</button>
+</form>
+
+
+
+</body>
+</html>
+<script>
+    function GetSHA256Psd()
+    {
+        var customerName = $("#customerName").val();
+        var businessNo = $("#businessNo").val();
+        var amount = $("#amount").val();
+        var documentNo = $("#documentNo").val();
+
+        console.log(customerName);
+        console.log(businessNo);
+        console.log(amount);
+        console.log(documentNo);
+
+
+
+
+
+
+        var myurl = "http://127.0.0.1:7788/api/Insurance/GetSHA256Psd?customerName=" + customerName + "&businessNo=" + businessNo + "&amount=" + amount + "&documentNo=" + documentNo;
+        console.log(myurl);
+
+
+
+       $.ajax({
+           url: myurl,// 跳转到 action  
+            type: 'GET',
+            success: function (data) {
+                $("#signMsg").val(data);
+
+               
+            },
+            error: function () {
+               
+                alert("异常！");
+            }
+        });
+        
+
+
+    }
+  
+</script>

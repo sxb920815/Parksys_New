@@ -1,0 +1,96 @@
+﻿@model MCLYGV3.DB.M_Permission
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<script type="text/javascript">
+	$(function () {
+		$("#btnSave").click(function () {
+			if ($("form").valid()) {
+				var queryArray = $("form").serializeObject();
+				var jsonString = JSON.stringify(queryArray);
+				$.ajax({
+					url: "@Url.Action("AddPermission")",
+					type: "Post",
+					data: jsonString,
+					dataType: "json",
+					success: function (data) {
+						if (data.type == 0) {
+							window.parent.frameReturnByMes(data.message);
+							window.parent.frameReturnByReload(true);
+							window.parent.frameReturnByClose()
+						}
+						else {
+							window.parent.frameReturnByMes(data.message);
+						}
+					}
+				});
+			}
+			return false;
+		});
+		$("#btnReturn").click(function () {
+			window.parent.frameReturnByClose();
+		});
+	});
+</script>
+<div class="mvctool bgb">
+	@Html.ToolButton("btnSave", "fa fa-save", "保存", "Save", true)
+	@Html.ToolButton("btnReturn", "fa fa-reply", "返回", false)
+</div>
+@using (Html.BeginForm())
+{
+	<table class="formtable">
+		<tbody>
+			<tr>
+				<th>ID:</th>
+				<td>
+					@Html.EditorFor(model => model.ID)
+					@Html.ValidationMessageFor(model => model.ID)
+				</td>
+			</tr>
+			<tr>
+				<th>权限名称:</th>
+				<td>
+					@Html.EditorFor(model => model.Name)
+					@Html.ValidationMessageFor(model => model.Name)
+				</td>
+			</tr>
+			<tr>
+				<th>上级ID:</th>
+				<td>
+					@Html.EditorFor(model => model.ParentId)
+					@Html.ValidationMessageFor(model => model.ParentId)
+				</td>
+			</tr>
+			<tr>
+				<th>描述:</th>
+				<td>
+					@Html.EditorFor(model => model.Description)
+					@Html.ValidationMessageFor(model => model.Description)
+				</td>
+			</tr>
+			<tr>
+				<th>网址:</th>
+				<td>
+					@Html.EditorFor(model => model.Url)
+					@Html.ValidationMessageFor(model => model.Url)
+				</td>
+			</tr>
+			<tr>
+				<th>创建人:</th>
+				<td>
+					@Html.EditorFor(model => model.CreatePerson)
+					@Html.ValidationMessageFor(model => model.CreatePerson)
+				</td>
+			</tr>
+			<tr>
+				<th>创建时间:</th>
+				<td>
+					@Html.EditorFor(model => model.CreateTime)
+					@Html.ValidationMessageFor(model => model.CreateTime)
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+}

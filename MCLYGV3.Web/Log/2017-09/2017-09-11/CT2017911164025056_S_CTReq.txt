@@ -1,0 +1,118 @@
+http://183.224.42.121:8080/echannel/cxf/acciSavePartyService
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <saveParty xmlns="http://saveProposal.accident.provider.app.thirdparty.echannel.ebiz.isoftstone.com/">
+      <saveParty xmlns="">
+        
+
+  <Head>
+    <partnerCode>MCLY</partnerCode>
+    <passWord>MCLY20170103</passWord>
+    <queryId>4dc663259ea8448982b4f3cb5d95279d</queryId>
+    <requestType>00001</requestType>
+    <userName>MCLY</userName>
+  </Head>
+  <Main>
+    <argueSolution>2</argueSolution>
+    <codInd>Y</codInd>
+    <commissionRatio>0.6132</commissionRatio>
+    <currency>CNY</currency>
+    <endDate>2018-02-11 23:59:59</endDate>
+    <operateDate>2017-09-11</operateDate>
+    <planCode>MCLY114401</planCode>
+    <shortRate>0.65</shortRate>
+    <startDate>2017-09-12 00:00:00</startDate>
+    <sumGrossPremium>51.54</sumGrossPremium>
+    <sumInsured>165000</sumInsured>
+  </Main>
+  <RelatedParty>
+    <birthDate>0000-00-00</birthDate>
+    <businessSource />
+    <contactName>qwdqwdqw</contactName>
+    <contactPhone>13888888888</contactPhone>
+    <officePhone>13888888888</officePhone>
+    <educationBackground> </educationBackground>
+    <email />
+    <identifyNumber>dqwdwdq</identifyNumber>
+    <identifyType>1</identifyType>
+    <insuredAddress />
+    <insuredName>qwdqwdqw</insuredName>
+    <insuredType>2</insuredType>
+    <uWCount>1</uWCount>
+  </RelatedParty>
+  <PlanList>
+    <Plan>
+      <ItemAcci>
+        <insuredBusinessSource>0102002</insuredBusinessSource>
+        <quantity>3</quantity>
+        <rationType>N</rationType>
+      </ItemAcci>
+      <ItemKindList>
+        <ItemKind>
+          <grossPremium>13</grossPremium>
+          <kindCode>1144001</kindCode>
+          <kindInd>1</kindInd>
+          <rate>0.0003</rate>
+          <sumInsured>50000</sumInsured>
+        </ItemKind>
+        <ItemKind>
+          <grossPremium>4.18</grossPremium>
+          <kindCode>1144002</kindCode>
+          <kindInd>2</kindInd>
+          <rate>0.0008</rate>
+          <sumInsured>5000</sumInsured>
+        </ItemKind>
+      </ItemKindList>
+      <riskRealateParyList>
+        <riskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1980-06-27</birthday>
+          <clientCName>简仁涛</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>222402198006279537</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0102002</insuredBusinessSource>
+          <postCode />
+          <sex>2</sex>
+          <email />
+          <homeAddress />
+          <clientCNameBenefit>法定</clientCNameBenefit>
+        </riskRealatePary>
+        <riskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1976-03-12</birthday>
+          <clientCName>班嘉力</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>130825197603128276</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0102002</insuredBusinessSource>
+          <postCode />
+          <sex>2</sex>
+          <email />
+          <homeAddress />
+          <clientCNameBenefit>法定</clientCNameBenefit>
+        </riskRealatePary>
+        <riskRealatePary>
+          <appliPhone>13888888888</appliPhone>
+          <birthday>1981-05-03</birthday>
+          <clientCName>穆星辰</clientCName>
+          <clientType>1</clientType>
+          <identifyNo>140427198105036296</identifyNo>
+          <identifyType>01</identifyType>
+          <insuredBusinessSource>0102002</insuredBusinessSource>
+          <postCode />
+          <sex>2</sex>
+          <email />
+          <homeAddress />
+          <clientCNameBenefit>法定</clientCNameBenefit>
+        </riskRealatePary>
+      </riskRealateParyList>
+    </Plan>
+  </PlanList>
+
+      </saveParty>
+    </saveParty>
+  </soap:Body>
+</soap:Envelope>
+

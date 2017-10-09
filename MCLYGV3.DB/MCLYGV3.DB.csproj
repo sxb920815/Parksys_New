@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECDCFF3C-A470-4471-8B75-C7FFBE9BA454}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCLYGV3.DB</RootNamespace>
+    <AssemblyName>MCLYGV3.DB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLLEXT\AdminUser.cs" />
+    <Compile Include="BLLEXT\B_UserInfo.cs" />
+    <Compile Include="BLLEXT\OldData.cs" />
+    <Compile Include="BLLEXT\Permission.cs" />
+    <Compile Include="BLLEXT\Role.cs" />
+    <Compile Include="ClassLib\Common.cs" />
+    <Compile Include="ClassLib\CreateLambda.cs" />
+    <Compile Include="ClassLib\GridPager.cs" />
+    <Compile Include="ClassLib\Log.cs" />
+    <Compile Include="ClassLib\QueryableExtension.cs" />
+    <Compile Include="BLLEXT\SysFile.cs" />
+    <Compile Include="DBContent.cs" />
+    <Compile Include="BLLEXT\B_Order.cs" />
+    <Compile Include="DB\AdminUser_Bll_Add.cs" />
+    <Compile Include="DB\AdminUser_Bll_DelQuery.cs" />
+    <Compile Include="DB\AdminUser_Bll_Edit.cs" />
+    <Compile Include="DB\AdminUser_M.cs" />
+    <Compile Include="DB\ChildPersion_Bll_Add.cs" />
+    <Compile Include="DB\ChildPersion_Bll_DelQuery.cs" />
+    <Compile Include="DB\ChildPersion_Bll_Edit.cs" />
+    <Compile Include="DB\ChildPersion_M.cs" />
+    <Compile Include="DB\Company_Bll_Add.cs" />
+    <Compile Include="DB\Company_Bll_DelQuery.cs" />
+    <Compile Include="DB\Company_Bll_Edit.cs" />
+    <Compile Include="DB\Company_M.cs" />
+    <Compile Include="DB\ItemInfo_Bll_Add.cs" />
+    <Compile Include="DB\ItemInfo_Bll_DelQuery.cs" />
+    <Compile Include="DB\ItemInfo_Bll_Edit.cs" />
+    <Compile Include="DB\ItemInfo_M.cs" />
+    <Compile Include="DB\MoneyConfigChild_Bll_Add.cs" />
+    <Compile Include="DB\MoneyConfigChild_Bll_DelQuery.cs" />
+    <Compile Include="DB\MoneyConfigChild_Bll_Edit.cs" />
+    <Compile Include="DB\MoneyConfigChild_M.cs" />
+    <Compile Include="DB\MoneyConfig_Bll_Add.cs" />
+    <Compile Include="DB\MoneyConfig_Bll_DelQuery.cs" />
+    <Compile Include="DB\MoneyConfig_Bll_Edit.cs" />
+    <Compile Include="DB\MoneyConfig_M.cs" />
+    <Compile Include="DB\MoneyProduct_Bll_Add.cs" />
+    <Compile Include="DB\MoneyProduct_Bll_DelQuery.cs" />
+    <Compile Include="DB\MoneyProduct_Bll_Edit.cs" />
+    <Compile Include="DB\MoneyProduct_M.cs" />
+    <Compile Include="DB\MoneyStatic_Bll_Add.cs" />
+    <Compile Include="DB\MoneyStatic_Bll_DelQuery.cs" />
+    <Compile Include="DB\MoneyStatic_Bll_Edit.cs" />
+    <Compile Include="DB\MoneyStatic_M.cs" />
+    <Compile Include="DB\OrderChild_Bll_Add.cs" />
+    <Compile Include="DB\OrderChild_Bll_DelQuery.cs" />
+    <Compile Include="DB\OrderChild_Bll_Edit.cs" />
+    <Compile Include="DB\OrderChild_M.cs" />
+    <Compile Include="DB\OrderPersion_Bll_Add.cs" />
+    <Compile Include="DB\OrderPersion_Bll_DelQuery.cs" />
+    <Compile Include="DB\OrderPersion_Bll_Edit.cs" />
+    <Compile Include="DB\OrderPersion_M.cs" />
+    <Compile Include="DB\OrderPlan_Bll_Add.cs" />
+    <Compile Include="DB\OrderPlan_Bll_DelQuery.cs" />
+    <Compile Include="DB\OrderPlan_Bll_Edit.cs" />
+    <Compile Include="DB\OrderPlan_M.cs" />
+    <Compile Include="DB\Order_Bll_Add.cs" />
+    <Compile Include="DB\Order_Bll_DelQuery.cs" />
+    <Compile Include="DB\Order_Bll_Edit.cs" />
+    <Compile Include="DB\Order_M.cs" />
+    <Compile Include="DB\PermissionOperation_Bll_Add.cs" />
+    <Compile Include="DB\PermissionOperation_Bll_DelQuery.cs" />
+    <Compile Include="DB\PermissionOperation_Bll_Edit.cs" />
+    <Compile Include="DB\PermissionOperation_M.cs" />
+    <Compile Include="DB\Permission_Bll_Add.cs" />
+    <Compile Include="DB\Permission_Bll_DelQuery.cs" />
+    <Compile Include="DB\Permission_Bll_Edit.cs" />
+    <Compile Include="DB\Permission_M.cs" />
+    <Compile Include="DB\Role_Bll_Add.cs" />
+    <Compile Include="DB\Role_Bll_DelQuery.cs" />
+    <Compile Include="DB\Role_Bll_Edit.cs" />
+    <Compile Include="DB\Role_M.cs" />
+    <Compile Include="DB\SysFile_Bll_Add.cs" />
+    <Compile Include="DB\SysFile_Bll_DelQuery.cs" />
+    <Compile Include="DB\SysFile_Bll_Edit.cs" />
+    <Compile Include="DB\SysFile_M.cs" />
+    <Compile Include="DB\UserInfo_Bll_Add.cs" />
+    <Compile Include="DB\UserInfo_Bll_DelQuery.cs" />
+    <Compile Include="DB\UserInfo_Bll_Edit.cs" />
+    <Compile Include="DB\UserInfo_M.cs" />
+    <Compile Include="Module\CTGroupInsInfo.cs" />
+    <Compile Include="Module\GroupCreateClientRequest.cs" />
+    <Compile Include="Module\PAGroupInsInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

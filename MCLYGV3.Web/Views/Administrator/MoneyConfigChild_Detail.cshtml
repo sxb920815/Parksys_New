@@ -1,0 +1,25 @@
+﻿@model MCLYGV3.DB.M_MoneyConfigChild
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<table class="formtable">
+	<tbody>
+		<tr>
+			<th>:</th>
+			<td>@Html.DisplayFor(model => model.ID)</td>
+		</tr>
+		<tr>
+			<th>产品名称:</th>
+			<td>@Html.DisplayFor(model => model.ProductName)</td>
+		</tr>
+		<tr>
+			<th>业务员:</th>
+			<td>@ViewBag.userName</td>
+		</tr>
+		<tr>
+			<th>费率:</th>
+			<td>@Html.DisplayFor(model => model.Rate)</td>
+		</tr>
+
+	</tbody>
+</table>

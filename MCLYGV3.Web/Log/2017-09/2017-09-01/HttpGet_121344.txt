@@ -1,0 +1,3 @@
+url:https://test-api.pingan.com.cn:20443/oauth/oauth2/access_token?client_id=P_JICHENGBAO&grant_type=client_credentials&client_secret=5hF8cm4B
+
+{"ret":"0","data":{"expires_in":"180","openid":"P_JICHENGBAO00","access_token":"FDBA02182498431ABDE06557E4676986"},"msg":""}

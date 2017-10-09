@@ -1,0 +1,75 @@
+﻿@model MCLYGV3.DB.M_PermissionOperation
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<script type="text/javascript">
+	$(function () {
+		$("#btnSave").click(function () {
+			if ($("form").valid()) {
+				var queryArray = $("form").serializeObject();
+				var jsonString = JSON.stringify(queryArray);
+				$.ajax({
+					url: "@Url.Action("AddPermissionOperation")",
+					type: "Post",
+					data: jsonString,
+					dataType: "json",
+					success: function (data) {
+						if (data.type == 0) {
+							window.parent.frameReturnByMes(data.message);
+							window.parent.frameReturnByReload(true);
+							window.parent.frameReturnByClose()
+						}
+						else {
+							window.parent.frameReturnByMes(data.message);
+						}
+					}
+				});
+			}
+			return false;
+		});
+		$("#btnReturn").click(function () {
+			window.parent.frameReturnByClose();
+		});
+	});
+</script>
+<div class="mvctool bgb">
+	@Html.ToolButton("btnSave", "fa fa-save", "保存", "Save", true)
+	@Html.ToolButton("btnReturn", "fa fa-reply", "返回", false)
+</div>
+@using (Html.BeginForm())
+{
+	<table class="formtable">
+		<tbody>
+			<tr>
+				<th>ID:</th>
+				<td>
+					@Html.EditorFor(model => model.Ids)
+					@Html.ValidationMessageFor(model => model.Ids)
+				</td>
+			</tr>
+			<tr>
+				<th>操作名称:</th>
+				<td>
+					@Html.EditorFor(model => model.Name)
+					@Html.ValidationMessageFor(model => model.Name)
+				</td>
+			</tr>
+			<tr>
+				<th>操作码:</th>
+				<td>
+					@Html.EditorFor(model => model.KeyCode)
+					@Html.ValidationMessageFor(model => model.KeyCode)
+				</td>
+			</tr>
+			<tr>
+				<th>功能ID:</th>
+				<td>
+					@Html.EditorFor(model => model.RightId)
+					@Html.ValidationMessageFor(model => model.RightId)
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+}

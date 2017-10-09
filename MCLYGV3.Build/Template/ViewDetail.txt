@@ -1,0 +1,9 @@
+﻿@model <%NameSpaceName%>.DB.M_<%ExpTable.TableName%>
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<table class="formtable">
+	<tbody>
+		<%tr%>
+	</tbody>
+</table>

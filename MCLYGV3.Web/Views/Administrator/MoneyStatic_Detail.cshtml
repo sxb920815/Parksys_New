@@ -1,0 +1,37 @@
+﻿@model MCLYGV3.DB.M_MoneyStatic
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<table class="formtable">
+	<tbody>
+		<tr>
+			<th>ID:</th>
+			<td>@Html.DisplayFor(model => model.ID)</td>
+		</tr>
+		<tr>
+			<th>产品:</th>
+			<td>@Html.DisplayFor(model => model.ProductName)</td>
+		</tr>
+		<tr>
+			<th>业务员:</th>
+			<td>@ViewBag.saler</td>
+		</tr>
+		<tr>
+			<th>代理公司:</th>
+			<td>@ViewBag.companyName</td>
+		</tr>
+		<tr>
+			<th>订单金额:</th>
+			<td>@Html.DisplayFor(model => model.Money)</td>
+		</tr>
+		<tr>
+			<th>代理公司提成:</th>
+			<td>@Html.DisplayFor(model => model.CompanyMoney)</td>
+		</tr>
+		<tr>
+			<th>业务员提成:</th>
+			<td>@Html.DisplayFor(model => model.UserMoney)</td>
+		</tr>
+
+	</tbody>
+</table>

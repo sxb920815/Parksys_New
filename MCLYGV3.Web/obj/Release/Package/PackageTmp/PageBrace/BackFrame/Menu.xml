@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MenuConfig  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ItemList>
+		<MenuItem>
+			<id>M5</id>
+			<text>订单管理</text>
+			<iconCls>fa  fa-wrench</iconCls>
+			<attributes>#</attributes>
+			<state>closed</state>
+			<ItemList>
+				<MenuItem>
+					<id>M5_1</id>
+					<text>订单列表</text>
+					<iconCls>fa  fa-reorder</iconCls>
+					<attributes>Administrator/Order_List</attributes>
+					<state>open</state>
+				</MenuItem>
+				
+			</ItemList>
+		</MenuItem>
+		<MenuItem>
+			<id>M7</id>
+			<text>业务管理</text>
+			<iconCls>fa  fa-wrench</iconCls>
+			<attributes>#</attributes>
+			<state>closed</state>
+			<ItemList>
+				<MenuItem>
+					<id>M7_1</id>
+					<text>代理公司列表</text>
+					<iconCls>fa  fa-reorder</iconCls>
+					<attributes>Administrator/Company_List</attributes>
+					<state>open</state>
+				</MenuItem>
+				<MenuItem>
+					<id>M7_2</id>
+					<text>业务员列表</text>
+					<iconCls>fa  fa-reorder</iconCls>
+					<attributes>Administrator/UserInfo_List</attributes>
+					<state>open</state>
+				</MenuItem>
+			</ItemList>
+		</MenuItem>
+		<MenuItem>
+			<id>M8</id>
+			<text>个人中心</text>
+			<iconCls>fa  fa-gears</iconCls>
+			<attributes>zh-CN/spl</attributes>
+			<state>closed</state>
+			<ItemList>
+				<MenuItem>
+					<id>M8_1</id>
+					<text>修改密码</text>
+					<iconCls>fa  fa-weixin</iconCls>
+					<attributes>Administrator/WeChatMenu</attributes>
+					<state>open</state>
+				</MenuItem>
+			</ItemList>
+		</MenuItem>
+		<MenuItem>
+			<id>M9</id>
+			<text>权限系统</text>
+			<iconCls>fa  fa-shield</iconCls>
+			<attributes>zh-CN/spl</attributes>
+			<state>closed</state>
+			<ItemList>
+				<MenuItem>
+					<id>M9_1</id>
+					<text>管理员列表</text>
+					<iconCls>fa  fa-reorder</iconCls>
+					<attributes>Administrator/AdminUser_List</attributes>
+					<state>open</state>
+				</MenuItem>
+				<MenuItem>
+					<id>M9_3</id>
+					<text>角色列表</text>
+					<iconCls>fa  fa-reorder</iconCls>
+					<attributes>Administrator/Role_List</attributes>
+					<state>open</state>
+				</MenuItem>
+				<MenuItem>
+					<id>M9_4</id>
+					<text>功能列表</text>
+					<iconCls>fa  fa-reorder</iconCls>
+					<attributes>Administrator/Permission_List</attributes>
+					<state>open</state>
+				</MenuItem>
+				<MenuItem>
+					<id>M9_5</id>
+					<text>操作列表</text>
+					<iconCls>fa  fa-reorder</iconCls>
+					<attributes>Administrator/PermissionOperation_List</attributes>
+					<state>open</state>
+				</MenuItem>
+				<MenuItem>
+					<id>M9_6</id>
+					<text>角色权限分配</text>
+					<iconCls>fa  fa-reorder</iconCls>
+					<attributes>Administrator/Role_Permission_Edit</attributes>
+					<state>open</state>
+				</MenuItem>
+			</ItemList>
+		</MenuItem>
+	</ItemList>
+</MenuConfig>

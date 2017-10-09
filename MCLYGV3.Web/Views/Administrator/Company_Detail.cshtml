@@ -1,0 +1,38 @@
+﻿@model MCLYGV3.DB.M_Company
+@{
+    Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+    string UserStr = "";
+}
+<table class="formtable">
+	<tbody>
+		<tr>
+			<th>ID:</th>
+			<td>@Html.DisplayFor(model => model.ID)</td>
+		</tr>
+		<tr>
+			<th>公司名:</th>
+			<td>@Html.DisplayFor(model => model.CompanyName)</td>
+		</tr>
+		<tr>
+			<th>电话:</th>
+			<td>@Html.DisplayFor(model => model.Tel)</td>
+		</tr>
+		<tr>
+			<th>信箱:</th>
+			<td>@Html.DisplayFor(model => model.Email)</td>
+		</tr>
+		<tr>
+			<th>地址:</th>
+			<td>@Html.DisplayFor(model => model.Address)</td>
+		</tr>
+		<tr>
+			<th>业务员列表:</th>
+            @foreach(var user in Model.UserList)
+            {
+                UserStr += user.RealName+",";
+            }
+			<td>@UserStr.TrimEnd(',')</td>
+		</tr>
+
+	</tbody>
+</table>

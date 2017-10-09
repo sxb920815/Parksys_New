@@ -1,0 +1,205 @@
+﻿
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="~/PageBrace/BackFrame/Js/jquery.min.js"></script>
+	<meta content="IE=11.0000" http-equiv="X-UA-Compatible">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>登录页面</title>
+
+	<style>
+		body {
+			background: #2C3B42;
+			color: #222;
+			font-size: 9pt;
+			font-family: 'Microsoft YaHei';
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.top_div {
+			width: 100%;
+			height: 60px;
+			text-align: center;
+			/*border-bottom: 1px solid #eaeaea;*/
+			background: #1E272C;
+			overflow: hidden;
+		}
+
+			.top_div table {
+				height: 60px !important;
+				overflow: hidden;
+				padding: 0;
+				margin: 0;
+			}
+
+		#loginbody {
+			background: #f9f9f9;
+			border: 1px solid #e7e7e7;
+			border-top: 3px solid #31BA78;
+			border-image: none;
+			width: 100%;
+			height: 300px;
+			text-align: center;
+			-moz-border-radius: 6px;
+			-webkit-border-radius: 6px;
+			border-radius: 6px;
+			margin-top: 100px;
+			-webkit-box-shadow: 0 0 10px rgba(0, 204, 204, .5);
+			-moz-box-shadow: 0 0 10px rgba(0, 204, 204, .5);
+			box-shadow: 0 0 10px rgba(0, 204, 204, .5);
+		}
+
+		#LoginTopLine {
+			font-size: 24px;
+			color: #fff;
+			line-height: 60px;
+		}
+
+		#LoginBotoomLine, #LoginTopLine {
+			width: 100%;
+			font-weight: 400;
+		}
+
+		#LoginBotoomLine {
+			font-size: 18px;
+			line-height: 60px;
+			color: #eee;
+		}
+
+		.ipt {
+			padding: 10px;
+			padding-left: 30px;
+			width: 80%;
+			border: 1px solid #d3d3d3;
+			border-radius: 4px;
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		}
+
+			.ipt:focus {
+				outline: 0;
+				border-color: #66afe9;
+				box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+			}
+
+		.u_logo {
+			top: 27px;
+		}
+
+		.p_logo, .u_logo {
+			left: 43px;
+			position: absolute;
+		}
+
+		.p_logo {
+			top: 9pt;
+		}
+
+		.s_logo {
+			position: absolute;
+			top: 9pt;
+			left: 10px;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		#local {
+			float: right;
+			margin-right: 33px;
+			height: 23px;
+			line-height: 23px;
+		}
+
+		.field-validation-error {
+			color: red;
+		}
+
+		.fa {
+			font-size: 14px;
+		}
+	</style>
+
+	<meta name="GENERATOR" content="MSHTML 11.00.9600.17496">
+</head>
+<body>
+	<div class="top_div">
+		<table>
+			<tr>
+				<td style="width:100px;"></td>
+				<td style="width:65px;">
+					<div style="width:63px; overflow:hidden;">
+						<img style="height:50px;width:50px;" src="~/PageBrace/BackFrame/img/logo.png" />
+					</div>
+				</td>
+				<td><div id="LoginTopLine">公司后台管理登录</div></td>
+				<td style="width:20px;"><div style="width:10px;border-right:1px solid #ccc;">&nbsp;</div></td>
+				<td><div id="LoginBotoomLine">欢迎使用</div></td>
+			</tr>
+		</table>
+	</div> 
+	<form id="form1" method="post" action="@Url.Action("LoginOnPost","Login")">
+
+		<table style="width:100%;min-height:600px">
+			<tr>
+				<td>&nbsp;</td>
+
+				<td style="width:500px;">
+					<div id="loginbody">
+						<p style="padding: 20px 0px 0px 40px; position: relative; text-align:left;font-weight:bold; text-align: center;">
+							<span style="font-size:20px;">登录</span>
+							<!--<select id="local">-->
+							<!--<option value="zh-CN">中国</option>-->
+							<!--<option value="en-US">English</option>-->
+							<!--</select>-->
+						</p>
+						<p style="padding:15px 0px 20px; position: relative;">
+							<span class="u_logo fa fa-user"></span>
+							<input id="UserName" name="UserName" class="ipt" type="text" placeholder="请输入用户名" value="">
+						</p>
+					    <p style="position: relative;">
+					        <span class="p_logo fa fa-key"></span>
+					        <input class="ipt" id="Password" name="Password" type="Password" placeholder="请输入密码" value="">
+					    </p>
+					    <p style="position: relative;">
+					        <span class="p_logo"></span>
+					    </p>
+
+						<div style="height: 63px; line-height:63px; margin-top: 20px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;">
+							<p style="margin: 0px 35px 20px 45px;">
+								<span id="mes" class="field-validation-error">
+								</span>
+								<span id="Loading" style="display: none" class='panel-loading'><font color='#000'>加载中...</font></span>
+								<span style="float: right;">
+
+									<a id="LoginSys" style="background: #31BA78; padding: 7px 15px; font-size:13px; border-radius: 4px; border: 1px solid #31BA78; border-image: none; color: rgb(255, 255, 255); font-weight: bold;"
+									   href='javascript:$("#form1").submit();'>登&nbsp;录</a>
+								</span>
+							</p>
+						</div>
+					</div>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+
+		</table>
+	</form>
+	
+
+	<div style="background: #1E272C; color: #fff; height: 40px; width: 100%; text-align: center; line-height: 40px;  bottom: 0; position: absolute">
+		版权所有 管理系统 &#169; Copyright 2017 - 2020. PCWine All Rights Reserved.
+	</div>
+
+</body>
+</html>
+
+

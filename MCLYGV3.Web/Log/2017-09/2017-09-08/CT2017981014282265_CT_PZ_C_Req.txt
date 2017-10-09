@@ -1,0 +1,594 @@
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":-31.21,"validDate":"2017-09-09 00:00:00","modifyFlag":"B","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"s","identifyNo":"610632199406015930","changeInsured":-31.21,"insuredBusinessSource":"1103001","ProfessionName":"记分员"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":-31.21,"validDate":"2017-09-09 00:00:00","modifyFlag":"B","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"s","identifyNo":"610632199406015930","changeInsured":-31.21,"insuredBusinessSource":"1103001","ProfessionName":"记分员"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":"031.21","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"ss","identifyNo":"610632199406015930","ProfessionName":"记分员","insuredBusinessSource":"1103001","changeInsured":"31.21"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":80,"validDate":"2017-09-06","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"朱俊","identifyNo":"120101196309142065","changeInsured":80,"insuredBusinessSource":"0101001","ProfessionName":"农场经营者（不亲自作业）"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":80,"validDate":"2017-09-06","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"朱俊","identifyNo":"120101196309142065","changeInsured":80,"insuredBusinessSource":"1103001","ProfessionName":"农场经营者（不亲自作业）"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":80,"validDate":"2017-09-09","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"朱俊","identifyNo":"120101196309142065","changeInsured":80,"insuredBusinessSource":"1103001","ProfessionName":"农场经营者（不亲自作业）"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":31.21,"validDate":"2017-09-09","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"朱俊","identifyNo":"120101196309142065","changeInsured":31.21,"insuredBusinessSource":"1103001","ProfessionName":"记分员"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":31.21,"validDate":"2017-09-09","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"朱俊1","identifyNo":"120101196309142066","changeInsured":31.21,"insuredBusinessSource":"1103001","ProfessionName":"记分员"}]}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": "031.21",
+    "validDate": "2017-09-09 00:00:00",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "ss",
+            "identifyNo": "610632199406015930",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": "31.21"
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09 00:00:00",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "ss",
+            "identifyNo": "610632199406015930",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": "31.21"
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09 00:00:00",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "ss",
+            "identifyNo": "610632199406015930",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":31.21,"validDate":"2017-09-09","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"朱俊1","identifyNo":"120101196309142066","changeInsured":31.21,"insuredBusinessSource":"1103001","ProfessionName":"记分员"}]}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09 00:00:00",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "ss",
+            "identifyNo": "610632199406015930",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":-31.21,"validDate":"2017-09-09 00:00:00","modifyFlag":"B","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"s","identifyNo":"610632199406015930","changeInsured":-31.21,"insuredBusinessSource":"1103001","ProfessionName":"记分员"}]}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09 00:00:00",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "ss",
+            "identifyNo": "610632199406015930",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09 00:00:00",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "ss",
+            "identifyNo": "610632199406015930",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s",
+            "identifyNo": "610632199406015930",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s",
+            "identifyNo": "610632199406015933",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s6",
+            "identifyNo": "610632199406015933",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.2
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.2,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.2,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.2
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31
+        }
+    ]
+}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":"031.21","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"周恩来","identifyNo":"610632199406015930","ProfessionName":"记分员","insuredBusinessSource":"1103001","changeInsured":"31.21"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":"031.21","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"周恩来","identifyNo":"610632199406015930","ProfessionName":"记分员","insuredBusinessSource":"1103001","changeInsured":"31.21"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":"031.21","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"周恩来","identifyNo":"610632199406015935","ProfessionName":"记分员","insuredBusinessSource":"1103001","changeInsured":"31.21"}]}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.21,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.21
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.22,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.22
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.20,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.20
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.23,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.23
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 32,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 32
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.12,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.12
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.120,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.120
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.19,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.19
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.18,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.18
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.24,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.24
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.23,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.23
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.22,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.22
+        }
+    ]
+}
+[UserID:136]
+
+{
+    "policyNo": "6000000114420170003331",
+    "sumPremium": 31.22,
+    "validDate": "2017-09-09",
+    "modifyFlag": "I",
+    "InsuranceCompany": "CT",
+    "InsuredUserList": [
+        {
+            "clientCName": "s9",
+            "identifyNo": "610632199406015939",
+            "ProfessionName": "记分员",
+            "insuredBusinessSource": "1103001",
+            "changeInsured": 31.22
+        }
+    ]
+}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":"31.210","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"毛泽西","identifyNo":"653124198806160801","ProfessionName":"记分员","insuredBusinessSource":"1103001","changeInsured":"31.21"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":"31.210","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"毛泽西","identifyNo":"653124198806160805","ProfessionName":"记分员","insuredBusinessSource":"1103001","changeInsured":"31.21"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":"31.210","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"毛泽西","identifyNo":"653124198806160805","ProfessionName":"记分员","insuredBusinessSource":"1103001","changeInsured":"31.21"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":"31.210","validDate":"2017-09-09 00:00:00","modifyFlag":"I","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"s","identifyNo":"6514564561415","ProfessionName":"记分员","insuredBusinessSource":"1103001","changeInsured":"31.21"}]}
+[UserID:136]
+
+{"policyNo":"6000000114420170003331","sumPremium":-31.21,"validDate":"2017-09-09 00:00:00","modifyFlag":"B","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"ss","identifyNo":"610632199406015932","changeInsured":-31.21,"insuredBusinessSource":"1103001","ProfessionName":"记分员"}]}

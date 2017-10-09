@@ -1,0 +1,29 @@
+﻿@model MCLYGV3.DB.M_PermissionOperation
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<table class="formtable">
+	<tbody>
+		<tr>
+			<th>ID:</th>
+			<td>@Html.DisplayFor(model => model.Ids)</td>
+		</tr>
+		<tr>
+			<th>操作名称:</th>
+			<td>@Html.DisplayFor(model => model.Name)</td>
+		</tr>
+		<tr>
+			<th>操作码:</th>
+			<td>@Html.DisplayFor(model => model.KeyCode)</td>
+		</tr>
+		<tr>
+			<th>功能ID:</th>
+			<td>@Html.DisplayFor(model => model.RightId)</td>
+		</tr>
+		<tr>
+			<th>对应权限:</th>
+			<td>@Html.DisplayFor(model => model.role)</td>
+		</tr>
+
+	</tbody>
+</table>

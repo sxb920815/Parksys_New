@@ -1,0 +1,153 @@
+﻿@using MCLYGV3.DB
+@model M_AdminUser
+@{
+	Layout = "~/Views/Shared/_BodyLayout.cshtml";
+}
+<div class="mvctool">
+	<div style="float:left">
+		菜单类型切换： <select class="easyui-combobox" name="swicthType" id="swicthType" style="width:80px;height:26px;margin-right:10px; ">
+			<option value="menu">系统菜单</option>
+			<option value="api">Api接口</option>
+		</select>
+	</div>
+	<div style="float:left; line-height:26px;"> &nbsp;&nbsp;角色组查询：</div>
+	<input id="txtQuery" type="text" class="searchText" />
+	<a id="btnQuery" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-search" style="font-size:14px"></span><span style="font-size:12px">查询</span></span></a>
+</div>
+
+<table style="width: 100%">
+	<tbody>
+		<tr>
+			<td style="width: 500px;  vertical-align: top">
+				<table id="roleList"></table>
+			</td>
+			<td style="padding: 0 3px; vertical-align: top">
+				
+			</td>
+			<td style="vertical-align: top">
+				<table id="rightList"></table>
+			</td>
+		
+		</tr>
+	</tbody>
+</table>
+<script type="text/javascript">
+    $(function () {
+
+
+
+        //变量定义
+        var curRoleId, curRoleName;
+        //用户表格
+        $('#roleList').datagrid({
+        	url: '/Administrator/GetRoleList',
+            width: 500,
+            title: '角色列表',
+            methord: 'post',
+            height: SetGridHeightSub(45),
+            fitColumns: true,
+            sortName: 'CreateTime',
+            sortOrder: 'desc',
+            idField: 'ID',
+            pageSize: 15,
+            pageList: [15, 20, 30, 40, 50],
+            pagination: true,
+            striped: true, //奇偶行是否区分
+            singleSelect: true,//单选模式
+            //rownumbers: true,//行号
+            columns: [[
+                { field: 'ID', title: 'ID', width: 80, hidden: true },
+                { field: 'Name', title: '名称', width: 80, sortable: true },
+                { field: 'Description', title: '说明', width: 80, sortable: true }
+            ]],
+            onClickRow: function (index, data) {
+                curRoleId = data.Id;
+                curRoleName = data.TrueName;
+                $('#rightList').datagrid("load", { roleId: curRoleId, isApi: $("#swicthType").combobox("getValue") });
+            }
+        }).datagrid('getPager').pagination({ showPageList: true, showRefresh: false, displayMsg: '' });
+
+        //模块权限表格
+        $('#rightList').datagrid({
+            url: '/SysRightGetRoleRight/GetRoleRight',
+            methord: 'post',
+            height: SetGridHeightSub(45),
+            fitColumns: true,
+            sortName: 'CreateTime',
+            sortOrder: 'desc',
+            idField: 'Id',
+            pageSize: 15,
+            pageList: [15, 20, 30, 40, 50],
+            pagination: true,
+            striped: true, //奇偶行是否区分
+            singleSelect: true,//单选模式
+            rownumbers: true,//行号
+            columns: [[
+                { field: 'ModuleId', title: 'ID', width: 80, hidden: true },
+                { field: 'ModuleName', title: '模块名称', width: 80, sortable: true },
+                { field: 'KeyCode', title: '拥有操作码', width: 80, sortable: true }
+            ]]
+        });
+
+        $("#btnQuery").click(function () {
+            var queryStr = $("#txtQuery").val();
+            if (queryStr == null) {
+                queryStr = "%";
+            }
+            $('#roleList').datagrid({
+                url: '/SysRightGetRoleRight/GetRoleList?queryStr=' + encodeURI(queryStr)
+            }).datagrid('getPager').pagination({ showPageList: true, showRefresh: false, displayMsg: '' });
+            $('#rightList').datagrid('loadData', { total: 0, rows: [] });
+        });
+        $(window).resize(function () {
+            resizeLayout();
+        });
+        resizeLayout();
+
+        $('#swicthType').combobox({
+            editable: false,
+            onSelect: function (record) {
+
+                $('#rightList').datagrid("load", { roleId: curRoleId, isApi: $("#swicthType").combobox("getValue") });
+            }
+        });
+    });
+
+    function resizeLayout() {
+        setTimeout(function () {
+            $('#roleList').datagrid('resize', {
+
+            }).datagrid('resize', {
+                height: SetGridHeightSub(45)
+            });
+            $('#rightList').datagrid('resize', {
+
+            }).datagrid('resize', {
+                width: $(window).width() - 520,
+                height: SetGridHeightSub(45)
+            });
+        }, 100);
+    }
+
+</script>
+
+<div id="over" class="over"></div>
+<div id="layout" class="layout"><img src="/Content/images/loading.gif" /></div>
+<div id="fullSetContent"></div>
+<script type="text/javascript">
+        $(function () {
+            if (isExitsFunction(window.parent.fullSetButtonOut))
+            {
+                $("#fullSetContent").html(window.parent.fullSetButtonOut());
+                $("#fullSetButton").click(function () {
+                    if($(this).attr("class") == "fa fa-expand"){
+                        $(this).removeClass("fa-expand").addClass("fa-compress");
+                    } else {
+                        $(this).removeClass("fa-compress").addClass("fa-expand");
+                    }
+                    window.parent.fullSet();
+                });
+            }
+        });
+
+</script>
