@@ -307,7 +307,7 @@
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AdminUser.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AdminUserRole.cs" />
-    <Compile Include="Controllers\Administrator\AdministratorController_Equment.cs" />
+    <Compile Include="Controllers\Administrator\AdministratorController_Equipment.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_Permission.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_PermissionOperation.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_Role.cs" />
@@ -374,6 +374,10 @@
     <None Include="Properties\PublishProfiles\mclyGroup.pubxml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\Administrator\Desktop.cshtml" />
+    <Content Include="Views\Administrator\Equipment_Add.cshtml" />
+    <Content Include="Views\Administrator\Equipment_Detail.cshtml" />
+    <Content Include="Views\Administrator\Equipment_Edit.cshtml" />
+    <Content Include="Views\Administrator\Equipment_List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -384,7 +388,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="PageBrace\BackFrame\Css\locale\" />
-    <Folder Include="Views\AdministratorController_Equment\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MCLYGV3.DB\MCLYGV3.DB.csproj">

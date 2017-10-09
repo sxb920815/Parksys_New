@@ -17,9 +17,19 @@ namespace MCLYGV3.DB
 		public DbSet<M_Role> RoleList { get; set; }
 		public DbSet<M_ItemInfo> ItemInfoList { get; set; }
 		public DbSet<M_SysFile> SysFileList { get; set; }
-		public DBContext()
+
+
+		public DbSet<M_Area> Areaist { get; set; }
+		public DbSet<M_AreaAndEqu> AreaAndEquList { get; set; }
+		public DbSet<M_BreakRuleAnnal> BreakRuleAnnalList { get; set; }
+		public DbSet<M_Car> CarList { get; set; }
+		public DbSet<M_CardAnnal> CardAnnalList { get; set; }
+		public DbSet<M_Equipment> EquipmentList { get; set; }
+		public DbSet<M_Wave> WaveList { get; set; }
+		public DbSet<M_WaveAnnal> WaveAnnalList { get; set; }
+        public DBContext()
 		{
-			Database.SetInitializer<DBContext>(null);
+			Database.SetInitializer<DBContext>(new CreateDatabaseIfNotExists<DBContext>());
 
             /* 策略一：数据库不存在时重新创建数据库
 			 * Database.SetInitializer<testContext>(new CreateDatabaseIfNotExists<DBContext>());

@@ -25,3 +25,17 @@ D:\MyProject\Parksys_New\MCLYGV3.DB\bin\Debug\Newtonsoft.Json.dll
 D:\MyProject\Parksys_New\MCLYGV3.DB\bin\Debug\EntityFramework.xml
 D:\MyProject\Parksys_New\MCLYGV3.DB\bin\Debug\EntityFramework.SqlServer.xml
 D:\MyProject\Parksys_New\MCLYGV3.DB\bin\Debug\Newtonsoft.Json.xml
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\MCLYGV3.DB.dll.config
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\MCLYGV3.DB.dll
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\MCLYGV3.DB.pdb
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\EntityFramework.dll
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\EntityFramework.SqlServer.dll
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\MySql.Data.dll
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\Newtonsoft.Json.dll
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\EntityFramework.xml
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\EntityFramework.SqlServer.xml
+D:\sxb_project\Parksys_new\MCLYGV3.DB\bin\Debug\Newtonsoft.Json.xml
+D:\sxb_project\Parksys_new\MCLYGV3.DB\obj\Debug\MCLYGV3.DB.csprojResolveAssemblyReference.cache
+D:\sxb_project\Parksys_new\MCLYGV3.DB\obj\Debug\MCLYGV3.DB.dll
+D:\sxb_project\Parksys_new\MCLYGV3.DB\obj\Debug\MCLYGV3.DB.pdb

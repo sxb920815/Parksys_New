@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -77,10 +78,17 @@
     <Compile Include="DB\AdminUser_Bll_Add.cs" />
     <Compile Include="DB\AdminUser_Bll_DelQuery.cs" />
     <Compile Include="DB\AdminUser_Bll_Edit.cs" />
+    <Compile Include="DB\Base_Bll_Service.cs" />
     <Compile Include="Model\AdminUser_M.cs" />
     <Compile Include="DB\ItemInfo_Bll_Add.cs" />
     <Compile Include="DB\ItemInfo_Bll_DelQuery.cs" />
     <Compile Include="DB\ItemInfo_Bll_Edit.cs" />
+    <Compile Include="Model\Area_M.cs" />
+    <Compile Include="Model\AreaAndEqu_M.cs" />
+    <Compile Include="Model\BreakRuleAnnal_M.cs" />
+    <Compile Include="Model\Car_M.cs" />
+    <Compile Include="Model\CardAnnal_M.cs" />
+    <Compile Include="Model\Equipment_M.cs" />
     <Compile Include="Model\ItemInfo_M.cs" />
     <Compile Include="DB\PermissionOperation_Bll_Add.cs" />
     <Compile Include="DB\PermissionOperation_Bll_DelQuery.cs" />
@@ -98,6 +106,8 @@
     <Compile Include="DB\SysFile_Bll_DelQuery.cs" />
     <Compile Include="DB\SysFile_Bll_Edit.cs" />
     <Compile Include="Model\SysFile_M.cs" />
+    <Compile Include="Model\Wave_M.cs" />
+    <Compile Include="Model\WaveAnnal_M.cs" />
     <Compile Include="Module\CTGroupInsInfo.cs" />
     <Compile Include="Module\GroupCreateClientRequest.cs" />
     <Compile Include="Module\PAGroupInsInfo.cs" />

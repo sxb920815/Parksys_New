@@ -1,0 +1,37 @@
+﻿@model MCLYGV3.DB.M_UserInfo
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<table class="formtable">
+	<tbody>
+		<tr>
+			<th>ID:</th>
+			<td>@Html.DisplayFor(model => model.ID)</td>
+		</tr>
+		<tr>
+			<th>用户名:</th>
+			<td>@Html.DisplayFor(model => model.UserName)</td>
+		</tr>
+		<tr>
+			<th>真实姓名:</th>
+			<td>@Html.DisplayFor(model => model.RealName)</td>
+		</tr>
+		<tr>
+			<th>登录密码:</th>
+			<td>@Html.DisplayFor(model => model.PassWord)</td>
+		</tr>
+		<tr>
+			<th>电话号码:</th>
+			<td>@Html.DisplayFor(model => model.Tel)</td>
+		</tr>
+		<tr>
+			<th>信箱:</th>
+			<td>@Html.DisplayFor(model => model.Email)</td>
+		</tr>
+		<tr>
+			<th>所属公司:</th>
+			<td>@Html.DisplayFor(model => model.InCompany)</td>
+		</tr>
+
+	</tbody>
+</table>

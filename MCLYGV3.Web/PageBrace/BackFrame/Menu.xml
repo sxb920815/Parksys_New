@@ -8,22 +8,29 @@
 			<attributes>#</attributes>
 			<state>closed</state>
 			<ItemList>
+        <MenuItem>
+          <id>M5_1</id>
+          <text>首页</text>
+          <iconCls>fa  fa-reorder</iconCls>
+          <attributes>Administrator/Desktop</attributes>
+          <state>open</state>
+        </MenuItem>
 				<MenuItem>
-					<id>M5_1</id>
+					<id>M5_2</id>
 					<text>违章车辆</text>
 					<iconCls>fa  fa-reorder</iconCls>
 					<attributes>Administrator/Order_List</attributes>
 					<state>open</state>
 				</MenuItem>
         <MenuItem>
-          <id>M5_2</id>
+          <id>M5_3</id>
           <text>出入记录</text>
           <iconCls>fa  fa-reorder</iconCls>
           <attributes>Administrator/Order_DownLoad</attributes>
           <state>open</state>
         </MenuItem>
         <MenuItem>
-          <id>M5_3</id>
+          <id>M5_4</id>
           <text>微波记录</text>
           <iconCls>fa  fa-reorder</iconCls>
           <attributes>Administrator/Order_DownLoad</attributes>
@@ -43,7 +50,7 @@
 					<id>M7_1</id>
 					<text>摄像机管理</text>
 					<iconCls>fa  fa-reorder</iconCls>
-					<attributes>Administrator/Company_List</attributes>
+					<attributes>Administrator/Equipment_List</attributes>
 					<state>open</state>
 				</MenuItem>
 				<MenuItem>
