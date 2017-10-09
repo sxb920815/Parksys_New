@@ -18,17 +18,6 @@ namespace MCLYGV3.DB
 		public DbSet<M_ItemInfo> ItemInfoList { get; set; }
 		public DbSet<M_SysFile> SysFileList { get; set; }
 		public DbSet<M_UserInfo> UserInfoList { get; set; }
-		public DbSet<M_Company> CompanyList { get; set; }
-		public DbSet<M_ChildPersion> ChildPersionList { get; set; }
-		public DbSet<M_Order> OrderList { get; set; }
-		public DbSet<M_OrderChild> OrderChildList { get; set; }
-		public DbSet<M_OrderPersion> OrderPersionList { get; set; }
-		public DbSet<M_OrderPlan> OrderPlanList { get; set; }
-		public DbSet<M_MoneyConfig> MoneyConfigList { get; set; }
-		public DbSet<M_MoneyConfigChild> MoneyConfigChildList { get; set; }
-		public DbSet<M_MoneyStatic> MoneyStaticList { get; set; }
-		public DbSet<M_MoneyProduct> MoneyProductList { get; set; }
-		//
 
 		public DBContext()
 		{

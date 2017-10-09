@@ -1,16 +1,17 @@
 ﻿@using MCLYGV3.DB
 @model M_AdminUser
 @{
-    Layout = "~/Views/Shared/_BodyLayout.cshtml";
-    string OrderCode = ViewBag.OrderCode;
+	Layout = "~/Views/Shared/_BodyLayout.cshtml";
 }
 <div class="mvctool">
 	<input id="txtQuery" type="text" class="searchText" />
 	<a id="btnQuery" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-search" style="font-size:14px"></span><span style="font-size:12px">查询</span></span></a><div class="datagrid-btn-separator"></div>
 	<a id="btnCreate" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-plus" style="font-size:14px"></span><span style="font-size:12px">创建</span></span></a><div class="datagrid-btn-separator"></div>
-	<a id="btnDetails" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-list" style="font-size:14px"></span><span style="font-size:12px">详细</span></span></a><div class="datagrid-btn-separator"></div>
+	@*<a id="btnDetails" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-list" style="font-size:14px"></span><span style="font-size:12px">详细</span></span></a><div class="datagrid-btn-separator"></div>*@
 	<a id="btnEdit" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-pencil" style="font-size:14px"></span><span style="font-size:12px">修改</span></span></a><div class="datagrid-btn-separator"></div>
 	<a id="btnDelete" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-trash" style="font-size:14px"></span><span style="font-size:12px">删除</span></span></a><div class="datagrid-btn-separator"></div>
+    <a id="btnReset" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-undo" style="font-size:14px"></span><span style="font-size:12px">重置密码</span></span></a><div class="datagrid-btn-separator"></div>
+
 </div>
 <table id="List"></table>
 <div id="Pager"></div>
@@ -33,7 +34,7 @@
 
 	$(function () {
 		$('#List').datagrid({
-			url: '/Administrator/GetOrderPersionList?OrderCode=@OrderCode',
+			url: '/Administrator/GetUserInfoList',
 			width: SetGridWidthSub(10),
 			methord: 'POST',
 			height: SetGridHeightSub(45),
@@ -48,18 +49,17 @@
 			singleSelect: true,//单选模式
 			columns: [[
 				{ field: 'ID', title: 'ID', sortable: true },
-				{ field: 'OrderCode', title: '订单编号或子订单编号', sortable: true },
-				{ field: 'Type', title: '0订单1子订单', sortable: true ,formatter:function(value){return value=="0"?"订单":"子订单"}},
-				{ field: 'ProfessionCode', title: '职业代码', sortable: true },
-				{ field: 'ProfessionName', title: '职业名称', sortable: true },
-				{ field: 'RealName', title: '姓名', sortable: true },
-				{ field: 'IdNum', title: '身份证号', sortable: true },
-				{ field: 'AcciPremium', title: '主险意外伤害保费', sortable: true },
-				{ field: 'AcciDutyAount', title: '主险意外伤害保额', sortable: true },
-				{ field: 'MedicalPremium', title: '附加医疗保费', sortable: true },
-				{ field: 'MedicalDutyAount', title: '附加医疗保额', sortable: true },
-				{ field: 'AllowancePremium', title: '住院津贴保额', sortable: true },
-				{ field: 'AllowanceDutyAount', title: '住院津贴保费', sortable: true },
+				{ field: 'UserName', title: '用户名', sortable: true },
+				{ field: 'RealName', title: '真实姓名', sortable: true },
+				{ field: 'Tel', title: '电话号码', sortable: true },
+				{ field: 'Email', title: '信箱', sortable: true },
+				{ field: 'InCompany', title: '所属公司', sortable: false,
+				    formatter: function (value, row, index)
+				    {
+				        return row.InCompany.CompanyName;
+				    //console.log(RoleNameStr);
+				    }
+				},
 
 			]]
 		});
@@ -88,22 +88,22 @@
 	}
 	$(function () {
 		
-		//$("#btnQuery").click(function () {
-		//	var queryStr = $("#txtQuery").val();
-		//	//如果查询条件为空默认查询全部
-		//	if (queryStr == null) {
-		//		queryStr = "";
-		//	}
-		//	$('#List').datagrid({ url: '/Administrator/GetOrderPersionList?queryStr=' + encodeURI(queryStr) });
-		//});
+		$("#btnQuery").click(function () {
+			var queryStr = $("#txtQuery").val();
+			//如果查询条件为空默认查询全部
+			if (queryStr == null) {
+				queryStr = "";
+			}
+			$('#List').datagrid({ url: '/Administrator/GetUserInfoList?queryStr=' + encodeURI(queryStr) });
+		});
 
 		$("#btnCreate").click(function () 
 		{
-			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=M5_Add", function (data) 
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Add", function (data) 
 			{
 				if (data.type == 0)
 				{
-					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0'' src='/Administrator/OrderPersion_Add'></iframe>");
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0'' src='/Administrator/UserInfo_Add'></iframe>");
 					$("#modalwindow").window({ title: '创建', width: 500, height: 450, iconCls: 'fa fa-plus' }).window('open');
 				}
 				else
@@ -116,7 +116,7 @@
 
 		$("#btnDetails").click(function () 
 		{
-			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=M5_Details", function (data) 
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Details", function (data) 
 			{
 				if (data.type == 0)
 				{
@@ -129,7 +129,7 @@
 						$.messageBox5s('提示', '请选择一个进行查看');
 						return;
 					}
-					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/OrderPersion_Detail?ID=" + rows[0].ID + "'></iframe>");
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/UserInfo_Detail?ID=" + rows[0].ID + "'></iframe>");
 					$("#modalwindow").window({ title: '详细', width: 500, height: 450, iconCls: 'fa fa-list' }).window('open');
 				}
 				else
@@ -142,7 +142,7 @@
 
 		$("#btnEdit").click(function () 
 		{
-			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=M5_Edit", function (data) 
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Edit", function (data) 
 			{
 				if (data.type == 0)
 				{
@@ -155,7 +155,7 @@
 						$.messageBox5s('提示', '请选择一个进行编辑');
 						return;
 					}
-					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/OrderPersion_Edit?id=" + rows[0].ID + "'></iframe>");
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/UserInfo_Edit?id=" + rows[0].ID + "'></iframe>");
 					$("#modalwindow").window({ title: '编辑', width: 500, height: 450, iconCls: 'fa fa-list' }).window('open');
 				}
 				else
@@ -168,7 +168,7 @@
 		
 		$("#btnDelete").click(function () 
 		{
-			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=M5_Del", function (data) 
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Del", function (data) 
 			{
 				if (data.type == 0)
 				{
@@ -181,7 +181,7 @@
 					if (rows.length > 0) {
 						$.messager.confirm('提示', '你要删除所选择的记录吗?', function (r) {
 							if (r) {
-								$.post("/Administrator/DelOrderPersion?id=" + idsStr, function (data) {
+								$.post("/Administrator/DelUserInfo?id=" + idsStr, function (data) {
 									if (data.type == 0)
 										$("#List").datagrid('reload');
 									$('#List').datagrid('clearSelections');
@@ -200,5 +200,39 @@
 				}
 			}, "json");
 		});
+	});
+	$("#btnReset").click(function () 
+	{
+	    $.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Del", function (data) 
+	    {
+	        if (data.type == 0)
+	        {
+	            var ids = [];
+	            var rows = $('#List').datagrid('getSelections');
+	            for (var i = 0; i < rows.length; i++) {
+	                ids.push(rows[i].ID);
+	            }
+	            var idsStr = ids.join(',');
+	            if (rows.length > 0) {
+	                $.messager.confirm('提示', '你要重置密码为123456吗?', function (r) {
+	                    if (r) {
+	                        $.post("/Administrator/PswReset?id=" + idsStr, function (data) {
+	                            if (data.type == 0)
+	                                $("#List").datagrid('reload');
+	                            $('#List').datagrid('clearSelections');
+	                            $.messageBox5s('提示', data.message);
+	                        }, "json");
+	                    }
+	                });
+	            }
+	            else {
+	                $.messageBox5s('提示', '请选择要操作的记录');
+	            }
+	        }
+	        else
+	        {
+	            $.messageBox5s('提示', data.message);
+	        }
+	    }, "json");
 	});
 </script>
