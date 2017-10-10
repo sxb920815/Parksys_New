@@ -1,6 +1,7 @@
-﻿@model MCLYGV3.DB.M_Equipment
+﻿@model MCLYGV3.DB.M_Area
 @{
 	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+    
 }
 <script type="text/javascript">
 	$(function () {
@@ -9,7 +10,7 @@
 				var queryArray = $("form").serializeObject();
 				var jsonString = JSON.stringify(queryArray);
 				$.ajax({
-					url: "@Url.Action("EditEquipment")",
+					url: "@Url.Action("AddArea")",
 					type: "Post",
 					data: jsonString,
 					dataType: "json",
@@ -38,34 +39,37 @@
 </div>
 @using (Html.BeginForm())
 {
-
-	@Html.HiddenFor(model => model.EquipmentId)
-
-
 	<table class="formtable">
-        <tbody>
+		<tbody>
+			<tr>
+				<th>名称:</th>
+				<td>
+					@Html.EditorFor(model => model.AreaName)
+					@Html.ValidationMessageFor(model => model.AreaName)
+				</td>
+			</tr>
+			<tr>
+				<th>车位:</th>
+				<td>
+					@Html.EditorFor(model => model.ParkingNumber)
+					@Html.ValidationMessageFor(model => model.ParkingNumber)
+				</td>
+			</tr>
+			<tr>
+				<th>剩余车位:</th>
+				<td>
+					@Html.EditorFor(model => model.RestParkingNumber)
+					@Html.ValidationMessageFor(model => model.RestParkingNumber)
+				</td>
+			</tr>
             <tr>
-                <th>名称:</th>
+                <th>备注:</th>
                 <td>
-                    @Html.EditorFor(model => model.EquipmentName)
-                    @Html.ValidationMessageFor(model => model.EquipmentName)
+                    @Html.EditorFor(model => model.Note)
+                    @Html.ValidationMessageFor(model => model.Note)
                 </td>
             </tr>
-            <tr>
-                <th>IP:</th>
-                <td>
-                    @Html.EditorFor(model => model.IP)
-                    @Html.ValidationMessageFor(model => model.IP)
-                </td>
-            </tr>
-            <tr>
-                <th>序列号:</th>
-                <td>
-                    @Html.EditorFor(model => model.Serialno)
-                    @Html.ValidationMessageFor(model => model.Serialno)
-                </td>
-            </tr>
-        </tbody>
+		</tbody>
 	</table>
 
 }

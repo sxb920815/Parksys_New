@@ -57,21 +57,21 @@
 					<id>M7_2</id>
 					<text>区域管理</text>
 					<iconCls>fa  fa-reorder</iconCls>
-					<attributes>Administrator/UserInfo_List</attributes>
+					<attributes>Administrator/Area_List</attributes>
 					<state>open</state>
 				</MenuItem>
         <MenuItem>
           <id>M7_3</id>
           <text>摄像机区域绑定</text>
           <iconCls>fa  fa-reorder</iconCls>
-          <attributes>Administrator/MoneyConfig_List</attributes>
+          <attributes>Administrator/AreaAndEqu_List</attributes>
           <state>open</state>
         </MenuItem>
         <MenuItem>
           <id>M7_4</id>
           <text>内部车辆管理</text>
           <iconCls>fa  fa-reorder</iconCls>
-          <attributes>Administrator/MoneyConfigChild_List</attributes>
+          <attributes>Administrator/Car_List</attributes>
           <state>open</state>
         </MenuItem>
 			</ItemList>

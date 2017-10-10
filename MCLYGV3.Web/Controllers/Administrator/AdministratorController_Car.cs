@@ -12,34 +12,54 @@ namespace MCLYGV3.Web.Controllers
 {
     public partial class AdministratorController : AdministratorControll
     {
-       
-        #region 设备表
+        
+        #region 内部车辆表
 
-        public ActionResult Equipment_List()
+        public ActionResult Car_List()
         {
+
             return View(MyUser);
         }
-        public ActionResult Equipment_Add()
+        public ActionResult Car_Add()
         {
+            List<SelectListItem> AreaSelect = new List<SelectListItem>();
+            var AreaList = _bs_Area.GetList(x=>true);
+            foreach (var item in AreaList)
+            {
+                SelectListItem li = new SelectListItem() { Text = item.AreaName, Value = item.AreaId.ToString() };
+                AreaSelect.Add(li);
+            }
+            ViewData["AreaId"] = new SelectList(AreaSelect, "Value", "Text", "0");
+
             return View();
         }
-        public ActionResult Equipment_Detail(int ID)
+        public ActionResult Car_Detail(int ID)
         {
-            var obj = _bs_equ.GetSingleById(ID);
+            var obj = _bs_Car.GetSingleById(ID);
             return View(obj);
         }
-        public ActionResult Equipment_Edit(int ID)
+        public ActionResult Car_Edit(int ID)
         {
-            var obj = _bs_equ.GetSingleById(ID);
+            List<SelectListItem> AreaSelect = new List<SelectListItem>();
+            var AreaList = _bs_Area.GetList(x => true);
+            foreach (var item in AreaList)
+            {
+                SelectListItem li = new SelectListItem() { Text = item.AreaName, Value = item.AreaId.ToString() };
+                AreaSelect.Add(li);
+            }
+            var obj = _bs_Car.GetSingleById(ID);
+
+            ViewData["AreaId"] = new SelectList(AreaSelect, "Value", "Text",AreaSelect.Find(t => t.Value == obj.AreaId.ToString()).Value);
+
             return View(obj);
         }
 
         [HttpPost]
-        public string DelEquipment(int ID)
+        public string DelCar(int ID)
         {
             JsonMessage result;
 
-            bool bol = _bs_equ.DeleteById(ID);
+            bool bol = _bs_Car.DeleteById(ID);
 
             if (bol)
                 result = new JsonMessage() { type = 0, message = "成功", value = "" };
@@ -52,15 +72,15 @@ namespace MCLYGV3.Web.Controllers
         }
 
         [HttpPost]
-        public string EditEquipment()
+        public string EditCar()
         {
             JsonMessage result;
             byte[] byts = new byte[Request.InputStream.Length];
             Request.InputStream.Read(byts, 0, byts.Length);
             string req = Encoding.UTF8.GetString(byts);
 
-            M_Equipment obj = JsonConvert.DeserializeObject<M_Equipment>(req);
-            bool bol = _bs_equ.Update(obj);
+            DB.M_Car obj = JsonConvert.DeserializeObject<DB.M_Car>(req);
+            bool bol = _bs_Car.Update(obj);
             if (bol)
                 result = new JsonMessage() { type = 0, message = "成功", value = req };
             else
@@ -72,33 +92,36 @@ namespace MCLYGV3.Web.Controllers
         }
 
         [HttpPost]
-        public string AddEquipment()
+        public string AddCar()
         {
             JsonMessage result;
             byte[] byts = new byte[Request.InputStream.Length];
             Request.InputStream.Read(byts, 0, byts.Length);
             string req = Encoding.UTF8.GetString(byts);
 
-            M_Equipment obj = JsonConvert.DeserializeObject<M_Equipment>(req);
-            _bs_equ.Create(obj);
+            DB.M_Car obj = JsonConvert.DeserializeObject<DB.M_Car>(req);
+            obj.CreateTime = DateTime.Now;
+            _bs_Car.Create(obj);
             result = new JsonMessage() { type = 0, message = "成功", value = req };
             Response.ContentType = "application/json";
             Response.Charset = "UTF-8";
             return JsonConvert.SerializeObject(result);
         }
 
-        public string GetEquipmentList(GridPager pager, string queryStr)
+        public string GetCarList(GridPager pager, string queryStr)
         {
             int count = 0;
             var isDesc = pager.order == "desc";
             var checkName = string.IsNullOrWhiteSpace(queryStr);
 
-            Expression<Func<M_Equipment, bool>> expression =
-                l => (checkName || l.EquipmentName.ToString().Contains(queryStr));
+            Expression<Func<DB.M_Car, bool>> expression =
+                l => (checkName || (l.License.ToString().Contains(queryStr) ||
+                l.OwnerName.ToString().Contains(queryStr) ||
+                l.OwnerPhone.ToString().Contains(queryStr)));
 
-            var list = _bs_equ.GetListByPaged(pager.page, pager.rows, out count, expression, isDesc, new OrderModelField { IsDESC= isDesc ,propertyName= pager.sort});
+            var list = _bs_Car.GetListByPaged(pager.page, pager.rows, out count, expression, isDesc, new OrderModelField { IsDESC= isDesc ,propertyName= pager.sort});
 
-            GridRows<M_Equipment> grs = new GridRows<M_Equipment>();
+            GridRows<DB.M_Car> grs = new GridRows<DB.M_Car>();
             grs.rows = list;
             grs.total = count;
             Response.ContentType = "application/json";
@@ -108,12 +131,6 @@ namespace MCLYGV3.Web.Controllers
             return JsonConvert.SerializeObject(grs, Formatting.Indented, timeFormat);
         }
 
-        [HttpGet]
-        public string GetEquipmentName(int equId)
-        {
-            var area = _bs_equ.GetSingleById(equId);
-            return area?.EquipmentName;
-        }
         #endregion
     }
 }

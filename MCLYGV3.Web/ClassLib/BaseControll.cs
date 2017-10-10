@@ -9,7 +9,18 @@ namespace MCLYGV3.Web
 {
 	public class AdministratorControll : Controller
 	{
-		public M_AdminUser MyUser;
+        public readonly DB.BaseDataService<M_Equipment> _bs_equ;
+        public readonly DB.BaseDataService<DB.M_Area> _bs_Area;
+        public readonly DB.BaseDataService<M_AreaAndEqu> _bs_AreaAndEqu;
+        public readonly DB.BaseDataService<M_Car> _bs_Car;
+        public AdministratorControll()
+        {
+            _bs_equ = new BaseDataService<M_Equipment>();
+            _bs_Area = new BaseDataService<DB.M_Area>();
+            _bs_AreaAndEqu = new BaseDataService<M_AreaAndEqu>();
+            _bs_Car = new BaseDataService<M_Car>();
+        }
+        public M_AdminUser MyUser;
 		protected override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
 			//Session["AdminUser"] = 1;

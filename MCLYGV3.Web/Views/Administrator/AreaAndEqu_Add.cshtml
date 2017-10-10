@@ -1,6 +1,7 @@
-﻿@model MCLYGV3.DB.M_Equipment
+﻿@model MCLYGV3.DB.M_AreaAndEqu
 @{
 	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+    
 }
 <script type="text/javascript">
 	$(function () {
@@ -9,7 +10,7 @@
 				var queryArray = $("form").serializeObject();
 				var jsonString = JSON.stringify(queryArray);
 				$.ajax({
-					url: "@Url.Action("EditEquipment")",
+					url: "@Url.Action("AddAreaAndEqu")",
 					type: "Post",
 					data: jsonString,
 					dataType: "json",
@@ -38,33 +39,30 @@
 </div>
 @using (Html.BeginForm())
 {
-
-	@Html.HiddenFor(model => model.EquipmentId)
-
-
 	<table class="formtable">
         <tbody>
             <tr>
-                <th>名称:</th>
+                <th>设备:</th>
                 <td>
-                    @Html.EditorFor(model => model.EquipmentName)
-                    @Html.ValidationMessageFor(model => model.EquipmentName)
+                    @Html.DropDownList("EquipmentId")
                 </td>
             </tr>
             <tr>
-                <th>IP:</th>
+                <th>区域:</th>
                 <td>
-                    @Html.EditorFor(model => model.IP)
-                    @Html.ValidationMessageFor(model => model.IP)
+                    @Html.DropDownList("AreaId")
                 </td>
             </tr>
             <tr>
-                <th>序列号:</th>
+                <th>状态:</th>
                 <td>
-                    @Html.EditorFor(model => model.Serialno)
-                    @Html.ValidationMessageFor(model => model.Serialno)
+                    <select id="State" name="State">
+                        <option value="进">进</option>
+                        <option value="出">出</option>
+                    </select>
                 </td>
             </tr>
+
         </tbody>
 	</table>
 

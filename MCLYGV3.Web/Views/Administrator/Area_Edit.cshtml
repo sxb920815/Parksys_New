@@ -1,4 +1,4 @@
-﻿@model MCLYGV3.DB.M_Equipment
+﻿@model MCLYGV3.DB.M_Area
 @{
 	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
 }
@@ -9,7 +9,7 @@
 				var queryArray = $("form").serializeObject();
 				var jsonString = JSON.stringify(queryArray);
 				$.ajax({
-					url: "@Url.Action("EditEquipment")",
+					url: "@Url.Action("EditArea")",
 					type: "Post",
 					data: jsonString,
 					dataType: "json",
@@ -39,7 +39,7 @@
 @using (Html.BeginForm())
 {
 
-	@Html.HiddenFor(model => model.EquipmentId)
+	@Html.HiddenFor(model => model.AreaId)
 
 
 	<table class="formtable">
@@ -47,22 +47,29 @@
             <tr>
                 <th>名称:</th>
                 <td>
-                    @Html.EditorFor(model => model.EquipmentName)
-                    @Html.ValidationMessageFor(model => model.EquipmentName)
+                    @Html.EditorFor(model => model.AreaName)
+                    @Html.ValidationMessageFor(model => model.AreaName)
                 </td>
             </tr>
             <tr>
-                <th>IP:</th>
+                <th>车位:</th>
                 <td>
-                    @Html.EditorFor(model => model.IP)
-                    @Html.ValidationMessageFor(model => model.IP)
+                    @Html.EditorFor(model => model.ParkingNumber)
+                    @Html.ValidationMessageFor(model => model.ParkingNumber)
                 </td>
             </tr>
             <tr>
-                <th>序列号:</th>
+                <th>剩余车位:</th>
                 <td>
-                    @Html.EditorFor(model => model.Serialno)
-                    @Html.ValidationMessageFor(model => model.Serialno)
+                    @Html.EditorFor(model => model.RestParkingNumber)
+                    @Html.ValidationMessageFor(model => model.RestParkingNumber)
+                </td>
+            </tr>
+            <tr>
+                <th>备注:</th>
+                <td>
+                    @Html.EditorFor(model => model.Note)
+                    @Html.ValidationMessageFor(model => model.Note)
                 </td>
             </tr>
         </tbody>

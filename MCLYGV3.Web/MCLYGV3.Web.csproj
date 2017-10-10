@@ -307,6 +307,9 @@
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AdminUser.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AdminUserRole.cs" />
+    <Compile Include="Controllers\Administrator\AdministratorController_AreaAndEqu.cs" />
+    <Compile Include="Controllers\Administrator\AdministratorController_Car.cs" />
+    <Compile Include="Controllers\Administrator\AdministratorController_Area.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_Equipment.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_Permission.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_PermissionOperation.cs" />
@@ -375,9 +378,17 @@
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\Administrator\Desktop.cshtml" />
     <Content Include="Views\Administrator\Equipment_Add.cshtml" />
-    <Content Include="Views\Administrator\Equipment_Detail.cshtml" />
     <Content Include="Views\Administrator\Equipment_Edit.cshtml" />
     <Content Include="Views\Administrator\Equipment_List.cshtml" />
+    <Content Include="Views\Administrator\Area_Add.cshtml" />
+    <Content Include="Views\Administrator\Area_Edit.cshtml" />
+    <Content Include="Views\Administrator\Area_List.cshtml" />
+    <Content Include="Views\Administrator\Car_Add.cshtml" />
+    <Content Include="Views\Administrator\Car_Edit.cshtml" />
+    <Content Include="Views\Administrator\Car_List.cshtml" />
+    <Content Include="Views\Administrator\AreaAndEqu_Add.cshtml" />
+    <Content Include="Views\Administrator\AreaAndEqu_Edit.cshtml" />
+    <Content Include="Views\Administrator\AreaAndEqu_List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

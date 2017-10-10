@@ -1,4 +1,4 @@
-﻿@model MCLYGV3.DB.M_UserInfo
+﻿@model MCLYGV3.DB.M_Equipment
 @{
 	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
     
@@ -10,7 +10,7 @@
 				var queryArray = $("form").serializeObject();
 				var jsonString = JSON.stringify(queryArray);
 				$.ajax({
-					url: "@Url.Action("AddUserInfo")",
+					url: "@Url.Action("AddEquipment")",
 					type: "Post",
 					data: jsonString,
 					dataType: "json",
@@ -42,47 +42,26 @@
 	<table class="formtable">
 		<tbody>
 			<tr>
-				<th>用户名:</th>
+				<th>名称:</th>
 				<td>
-					@Html.EditorFor(model => model.UserName)
-					@Html.ValidationMessageFor(model => model.UserName)
+					@Html.EditorFor(model => model.EquipmentName)
+					@Html.ValidationMessageFor(model => model.EquipmentName)
 				</td>
 			</tr>
 			<tr>
-				<th>真实姓名:</th>
+				<th>IP:</th>
 				<td>
-					@Html.EditorFor(model => model.RealName)
-					@Html.ValidationMessageFor(model => model.RealName)
+					@Html.EditorFor(model => model.IP)
+					@Html.ValidationMessageFor(model => model.IP)
 				</td>
 			</tr>
 			<tr>
-				<th>登录密码:</th>
+				<th>序列号:</th>
 				<td>
-					@Html.EditorFor(model => model.PassWord)
-					@Html.ValidationMessageFor(model => model.PassWord)
+					@Html.EditorFor(model => model.Serialno)
+					@Html.ValidationMessageFor(model => model.Serialno)
 				</td>
 			</tr>
-			<tr>
-				<th>电话号码:</th>
-				<td>
-					@Html.EditorFor(model => model.Tel)
-					@Html.ValidationMessageFor(model => model.Tel)
-				</td>
-			</tr>
-			<tr>
-				<th>信箱:</th>
-				<td>
-					@Html.EditorFor(model => model.Email)
-					@Html.ValidationMessageFor(model => model.Email)
-				</td>
-			</tr>
-			<tr>
-				<th>所属公司:</th>
-				<td>
-                    @Html.DropDownList("InCompanySelect")
-				</td>
-			</tr>
-
 		</tbody>
 	</table>
 

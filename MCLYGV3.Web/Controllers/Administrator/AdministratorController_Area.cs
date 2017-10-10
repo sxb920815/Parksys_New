@@ -12,34 +12,34 @@ namespace MCLYGV3.Web.Controllers
 {
     public partial class AdministratorController : AdministratorControll
     {
-       
+        
         #region 设备表
 
-        public ActionResult Equipment_List()
+        public ActionResult Area_List()
         {
             return View(MyUser);
         }
-        public ActionResult Equipment_Add()
+        public ActionResult Area_Add()
         {
             return View();
         }
-        public ActionResult Equipment_Detail(int ID)
+        public ActionResult Area_Detail(int ID)
         {
-            var obj = _bs_equ.GetSingleById(ID);
+            var obj = _bs_Area.GetSingleById(ID);
             return View(obj);
         }
-        public ActionResult Equipment_Edit(int ID)
+        public ActionResult Area_Edit(int ID)
         {
-            var obj = _bs_equ.GetSingleById(ID);
+            var obj = _bs_Area.GetSingleById(ID);
             return View(obj);
         }
 
         [HttpPost]
-        public string DelEquipment(int ID)
+        public string DelArea(int ID)
         {
             JsonMessage result;
 
-            bool bol = _bs_equ.DeleteById(ID);
+            bool bol = _bs_Area.DeleteById(ID);
 
             if (bol)
                 result = new JsonMessage() { type = 0, message = "成功", value = "" };
@@ -52,15 +52,15 @@ namespace MCLYGV3.Web.Controllers
         }
 
         [HttpPost]
-        public string EditEquipment()
+        public string EditArea()
         {
             JsonMessage result;
             byte[] byts = new byte[Request.InputStream.Length];
             Request.InputStream.Read(byts, 0, byts.Length);
             string req = Encoding.UTF8.GetString(byts);
 
-            M_Equipment obj = JsonConvert.DeserializeObject<M_Equipment>(req);
-            bool bol = _bs_equ.Update(obj);
+            DB.M_Area obj = JsonConvert.DeserializeObject<DB.M_Area>(req);
+            bool bol = _bs_Area.Update(obj);
             if (bol)
                 result = new JsonMessage() { type = 0, message = "成功", value = req };
             else
@@ -72,33 +72,34 @@ namespace MCLYGV3.Web.Controllers
         }
 
         [HttpPost]
-        public string AddEquipment()
+        public string AddArea()
         {
             JsonMessage result;
             byte[] byts = new byte[Request.InputStream.Length];
             Request.InputStream.Read(byts, 0, byts.Length);
             string req = Encoding.UTF8.GetString(byts);
 
-            M_Equipment obj = JsonConvert.DeserializeObject<M_Equipment>(req);
-            _bs_equ.Create(obj);
+            DB.M_Area obj = JsonConvert.DeserializeObject<DB.M_Area>(req);
+            obj.CreateTime = DateTime.Now;
+            _bs_Area.Create(obj);
             result = new JsonMessage() { type = 0, message = "成功", value = req };
             Response.ContentType = "application/json";
             Response.Charset = "UTF-8";
             return JsonConvert.SerializeObject(result);
         }
 
-        public string GetEquipmentList(GridPager pager, string queryStr)
+        public string GetAreaList(GridPager pager, string queryStr)
         {
             int count = 0;
             var isDesc = pager.order == "desc";
             var checkName = string.IsNullOrWhiteSpace(queryStr);
 
-            Expression<Func<M_Equipment, bool>> expression =
-                l => (checkName || l.EquipmentName.ToString().Contains(queryStr));
+            Expression<Func<DB.M_Area, bool>> expression =
+                l => (checkName || l.AreaName.ToString().Contains(queryStr));
 
-            var list = _bs_equ.GetListByPaged(pager.page, pager.rows, out count, expression, isDesc, new OrderModelField { IsDESC= isDesc ,propertyName= pager.sort});
+            var list = _bs_Area.GetListByPaged(pager.page, pager.rows, out count, expression, isDesc, new OrderModelField { IsDESC= isDesc ,propertyName= pager.sort});
 
-            GridRows<M_Equipment> grs = new GridRows<M_Equipment>();
+            GridRows<DB.M_Area> grs = new GridRows<DB.M_Area>();
             grs.rows = list;
             grs.total = count;
             Response.ContentType = "application/json";
@@ -109,10 +110,10 @@ namespace MCLYGV3.Web.Controllers
         }
 
         [HttpGet]
-        public string GetEquipmentName(int equId)
+        public string GetAreaName(int areaId)
         {
-            var area = _bs_equ.GetSingleById(equId);
-            return area?.EquipmentName;
+            var area = _bs_Area.GetSingleById(areaId);
+            return area?.AreaName;
         }
         #endregion
     }

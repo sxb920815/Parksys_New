@@ -1,4 +1,4 @@
-﻿@model MCLYGV3.DB.M_Equipment
+﻿@model MCLYGV3.DB.M_Car
 @{
 	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
 }
@@ -9,7 +9,7 @@
 				var queryArray = $("form").serializeObject();
 				var jsonString = JSON.stringify(queryArray);
 				$.ajax({
-					url: "@Url.Action("EditEquipment")",
+					url: "@Url.Action("EditCar")",
 					type: "Post",
 					data: jsonString,
 					dataType: "json",
@@ -39,30 +39,43 @@
 @using (Html.BeginForm())
 {
 
-	@Html.HiddenFor(model => model.EquipmentId)
+	@Html.HiddenFor(model => model.CarId)
 
 
 	<table class="formtable">
         <tbody>
             <tr>
-                <th>名称:</th>
+                <th>车主姓名:</th>
                 <td>
-                    @Html.EditorFor(model => model.EquipmentName)
-                    @Html.ValidationMessageFor(model => model.EquipmentName)
+                    @Html.EditorFor(model => model.OwnerName)
+                    @Html.ValidationMessageFor(model => model.OwnerName)
                 </td>
             </tr>
             <tr>
-                <th>IP:</th>
+                <th>车主电话:</th>
                 <td>
-                    @Html.EditorFor(model => model.IP)
-                    @Html.ValidationMessageFor(model => model.IP)
+                    @Html.EditorFor(model => model.OwnerPhone)
+                    @Html.ValidationMessageFor(model => model.OwnerPhone)
                 </td>
             </tr>
             <tr>
-                <th>序列号:</th>
+                <th>牌照号:</th>
                 <td>
-                    @Html.EditorFor(model => model.Serialno)
-                    @Html.ValidationMessageFor(model => model.Serialno)
+                    @Html.EditorFor(model => model.License)
+                    @Html.ValidationMessageFor(model => model.License)
+                </td>
+            </tr>
+            <tr>
+                <th>所属区域:</th>
+                <td>
+                    @Html.DropDownList("AreaId")
+                </td>
+            </tr>
+            <tr>
+                <th>备注:</th>
+                <td>
+                    @Html.EditorFor(model => model.Note)
+                    @Html.ValidationMessageFor(model => model.Note)
                 </td>
             </tr>
         </tbody>

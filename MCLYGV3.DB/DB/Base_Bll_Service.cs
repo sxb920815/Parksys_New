@@ -164,20 +164,35 @@ namespace MCLYGV3.DB
             }
         }
 
+
         //带分页查询
-        public List<T> GetListByPaged<S>(int pageIndex, int pageSize, out int rows, Expression<Func<T, bool>> whereLambds, bool isAsc, Expression<Func<T, S>> orderByLambds)
+        public List<T> GetListByPaged(int pageIndex, int pageSize, out int rows, Expression<Func<T, bool>> whereLambds, bool isAsc, params OrderModelField[] orderByExpression)
         {
             var temp = db.Set<T>().Where<T>(whereLambds);
             rows = temp.Count();
 
-            if (isAsc)
+            //创建表达式变量参数
+            var parameter = Expression.Parameter(typeof(T), "o");
+
+            if (orderByExpression != null && orderByExpression.Length > 0)
             {
-                temp = temp.OrderBy<T, S>(orderByLambds);
+                for (int i = 0; i < orderByExpression.Length; i++)
+                {
+                    //根据属性名获取属性
+                    var property = typeof(T).GetProperty(orderByExpression[i].propertyName);
+                    //创建一个访问属性的表达式
+                    var propertyAccess = Expression.MakeMemberAccess(parameter, property);
+                    var orderByExp = Expression.Lambda(propertyAccess, parameter);
+
+
+                    string OrderName = orderByExpression[i].IsDESC ? "OrderByDescending" : "OrderBy";
+
+
+                    MethodCallExpression resultExp = Expression.Call(typeof(Queryable), OrderName, new Type[] { typeof(T), property.PropertyType }, temp.Expression, Expression.Quote(orderByExp));
+                    temp = temp.Provider.CreateQuery<T>(resultExp);
+                }
             }
-            else
-            {
-                temp = temp.OrderByDescending<T, S>(orderByLambds);
-            }
+
             temp = temp.Skip<T>(pageSize * (pageIndex - 1)).Take<T>(pageSize);
             return temp.ToList<T>();
         }
@@ -189,5 +204,11 @@ namespace MCLYGV3.DB
             return temp.Count();
         }
 
+    }
+
+    public struct OrderModelField
+    {
+        public string propertyName { get; set; }
+        public bool IsDESC { get; set; }
     }
 }

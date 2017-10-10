@@ -32,25 +32,25 @@
 
 	$(function () {
 		$('#List').datagrid({
-		    url: '/Administrator/GetEquipmentList',
+		    url: '/Administrator/GetAreaList',
 			width: SetGridWidthSub(10),
 			methord: 'POST',
 			height: SetGridHeightSub(45),
 			fitColumns: true,
-			sortName: 'EquipmentId',
+			sortName: 'AreaId',
 			sortOrder: 'desc',
-			idField: 'EquipmentId',
+			idField: 'AreaId',
 			pageSize: 15,
 			pageList: [15, 20, 30, 40, 50],
 			pagination: true,
 			striped: false, //奇偶行是否区分
 			singleSelect: true,//单选模式
 			columns: [[
-				{ field: 'EquipmentId', title: 'ID', sortable: true },
-				{ field: 'EquipmentName', title: '名称', sortable: true },
-				{ field: 'IP', title: 'IP', sortable: true },
-				{ field: 'Serialno', title: '序列号', sortable: true }
-
+				{ field: 'AreaId', title: 'ID', sortable: true },
+				{ field: 'AreaName', title: '名称', sortable: true },
+				{ field: 'ParkingNumber', title: '车位', sortable: true },
+				{ field: 'RestParkingNumber', title: '剩余车位', sortable: true },
+				{ field: 'Note', title: '备注', sortable: true }
 			]]
 		});
 	});
@@ -84,7 +84,7 @@
 			if (queryStr == null) {
 				queryStr = "";
 			}
-			$('#List').datagrid({ url: '/Administrator/GetEquipmentList?queryStr=' + encodeURI(queryStr) });
+			$('#List').datagrid({ url: '/Administrator/GetAreaList?queryStr=' + encodeURI(queryStr) });
 		});
 
 		$("#btnCreate").click(function () 
@@ -93,7 +93,7 @@
 			{
 				if (data.type == 0)
 				{
-					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0'' src='/Administrator/Equipment_Add'></iframe>");
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0'' src='/Administrator/Area_Add'></iframe>");
 					$("#modalwindow").window({ title: '创建', width: 500, height: 450, iconCls: 'fa fa-plus' }).window('open');
 				}
 				else
@@ -119,7 +119,7 @@
 						$.messageBox5s('提示', '请选择一个进行查看');
 						return;
 					}
-					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/Equipment_Detail?ID=" + rows[0].ID + "'></iframe>");
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/Area_Detail?ID=" + rows[0].ID + "'></iframe>");
 					$("#modalwindow").window({ title: '详细', width: 500, height: 450, iconCls: 'fa fa-list' }).window('open');
 				}
 				else
@@ -145,7 +145,7 @@
 						$.messageBox5s('提示', '请选择一个进行编辑');
 						return;
 					}
-					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/Equipment_Edit?id=" + rows[0].EquipmentId + "'></iframe>");
+					$("#modalwindow").html("<iframe width='100%' height='100%' frameborder='0' src='/Administrator/Area_Edit?id=" + rows[0].AreaId + "'></iframe>");
 					$("#modalwindow").window({ title: '编辑', width: 500, height: 450, iconCls: 'fa fa-list' }).window('open');
 				}
 				else
@@ -165,13 +165,13 @@
 					var ids = [];
 					var rows = $('#List').datagrid('getSelections');
 					for (var i = 0; i < rows.length; i++) {
-					    ids.push(rows[i].EquipmentId);
+					    ids.push(rows[i].AreaId);
 					}
 					var idsStr = ids.join(',');
 					if (rows.length > 0) {
 						$.messager.confirm('提示', '你要删除所选择的记录吗?', function (r) {
 							if (r) {
-								$.post("/Administrator/DelEquipment?id=" + idsStr, function (data) {
+								$.post("/Administrator/DelArea?id=" + idsStr, function (data) {
 									if (data.type == 0)
 										$("#List").datagrid('reload');
 									$('#List').datagrid('clearSelections');
