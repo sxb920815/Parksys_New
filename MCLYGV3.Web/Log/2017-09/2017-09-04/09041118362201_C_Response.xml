@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<GroupCorrectResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Head>
-    <ResponseMessage>核心的总保费和批改的总保费不一致！</ResponseMessage>
-    <requestType>12003</requestType>
-    <ResponseCode />
-  </Head>
-</GroupCorrectResponse>

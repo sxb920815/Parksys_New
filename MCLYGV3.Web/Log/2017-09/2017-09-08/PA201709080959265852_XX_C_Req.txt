@@ -1,3 +1,0 @@
-[UserID:136]
-
-{"Head":{"AppName":"PA_Group","Password":"123456"},"Body":{"OrderCode":"PA201709080959265852","OrderType":"Group","StartDate":"2017-09-09 00:00:00","InsuranceCompany":"PA","CodInd":"Y","applyMonth":12,"Surcharge":0},"RelatedParty":{"InsuredName":"qwdqw","IdentifyNumber":"dqwdqw","IdentifyPic":"\\StorageFiles\\2017\\9\\8\\db5b75f9-6803-46e8-bda9-0f2b26099fc2.png"},"RiskRealateParyList":[{"InsurantList":[],"PlanList":[{"planCode":"Y502","dutyCode":"YA01","ProfessionCode":"0001001","ModalPremium":105.8,"dutyAount":200000}],"professionCode":"0001001"}]}

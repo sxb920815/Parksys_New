@@ -82,7 +82,8 @@ namespace MCLYGV3.Web.Controllers
 			obj.NowTime = DateTime.Now;
 			obj.LastTime = DateTime.Now;
 			obj.PassWord = Common.Sha1(obj.PassWord);
-			obj = B_AdminUser.Add(obj);
+            obj.InCompanyId = 0;
+            obj = B_AdminUser.Add(obj);
 			result = new JsonMessage() { type = 0, message = "成功", value = req };
 			Response.ContentType = "application/json";
 			Response.Charset = "UTF-8";

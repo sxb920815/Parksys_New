@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<GroupCorrectResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Head>
-    <ResponseMessage>该被保险人已经存在，不能再次批增</ResponseMessage>
-    <requestType>12003</requestType>
-    <ResponseCode>9034</ResponseCode>
-  </Head>
-</GroupCorrectResponse>

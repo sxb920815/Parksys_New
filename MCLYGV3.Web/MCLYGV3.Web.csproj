@@ -291,6 +291,7 @@
     <Compile Include="ClassLib\AllowOriginAttribute.cs" />
     <Compile Include="ClassLib\Area.cs" />
     <Compile Include="ClassLib\BaseControll.cs" />
+    <Compile Include="ClassLib\CensusdemoTask.cs" />
     <Compile Include="ClassLib\Common.cs" />
     <Compile Include="ClassLib\Convert.cs" />
     <Compile Include="ClassLib\CTGroupInsInfo.cs" />
@@ -307,6 +308,7 @@
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AdminUser.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AdminUserRole.cs" />
+    <Compile Include="Controllers\Administrator\AdministratorController_Annal.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_AreaAndEqu.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_Car.cs" />
     <Compile Include="Controllers\Administrator\AdministratorController_Area.cs" />
@@ -389,6 +391,9 @@
     <Content Include="Views\Administrator\AreaAndEqu_Add.cshtml" />
     <Content Include="Views\Administrator\AreaAndEqu_Edit.cshtml" />
     <Content Include="Views\Administrator\AreaAndEqu_List.cshtml" />
+    <Content Include="Views\Administrator\BreakRuleAnnal_List.cshtml" />
+    <Content Include="Views\Administrator\CardAnnal_List.cshtml" />
+    <Content Include="Views\Administrator\WaveAnnal_List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,150 @@
+﻿@using MCLYGV3.DB
+@model M_AdminUser
+@{
+	Layout = "~/Views/Shared/_BodyLayout.cshtml";
+}
+<div class="mvctool">
+    <input id="txtQuery" type="text" class="searchText" />
+    <span style="font-size:14px;float: left;" class="l-btn-text">开始时间</span><input id="startTime" type="date" class="searchText" style="float: left;height:27px;" />
+    <span style="font-size: 14px; float: left;" class="l-btn-text">结束时间</span><input id="endTime" type="date" class="searchText" style="float: left; height: 27px;" />
+
+	<a id="btnQuery" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-search" style="font-size:14px"></span><span style="font-size:12px">查询</span></span></a><div class="datagrid-btn-separator"></div>
+    <a id="btnDelete" style="float: left;" class="l-btn l-btn-plain"><span class="l-btn-left"><span class="l-btn-text fa fa-trash" style="font-size:14px"></span><span style="font-size:12px">删除</span></span></a><div class="datagrid-btn-separator"></div>
+	
+</div>
+<table id="List"></table>
+<div id="Pager"></div>
+<div id="modalwindow" class="easyui-window" data-options="modal:true,closed:true,minimizable:false,shadow:false"></div>
+@*Jqgrid*@
+<script type="text/javascript">
+	//ifram 返回
+	function frameReturnByClose() {
+		$("#modalwindow").window('close');
+	}
+	function frameReturnByReload(flag) {
+		if (flag)
+			$("#List").datagrid('load');
+		else
+			$("#List").datagrid('reload');
+	}
+	function frameReturnByMes(mes) {
+		$.messageBox5s('提示', mes);
+	}
+
+	$(function () {
+		$('#List').datagrid({
+		    url: '/Administrator/GetBreakRuleAnnalList',
+			width: SetGridWidthSub(10),
+			methord: 'POST',
+			height: SetGridHeightSub(45),
+			fitColumns: true,
+			sortName: 'BreakRuleAnnalId',
+			sortOrder: 'desc',
+			idField: 'BreakRuleAnnalId',
+			pageSize: 15,
+			pageList: [15, 20, 30, 40, 50],
+			pagination: true,
+			striped: false, //奇偶行是否区分
+			singleSelect: true,//单选模式
+			columns: [[
+				{ field: 'BreakRuleAnnalId', title: 'ID', sortable: true },
+				{ field: 'License', title: '车牌号', sortable: true },
+				{ field: 'EquipmentId', title: '设备', sortable: true  ,formatter:function(value){ return GetEquipmentName(value)}},
+				{ field: 'State', title: '出入状态', sortable: true },
+				{ field: 'CreateTime', title: '时间', sortable: true }
+			]]
+		});
+	});
+	
+</script>
+@Html.Partial("~/Views/Shared/_Partial_AutoGrid.cshtml")
+@*operation*@
+<script type="text/javascript">
+	
+    var AdminUserId=@Model.ID;
+
+    var EquipmentList=new Array();
+    function GetEquipmentName(EquipmentId){
+        if(EquipmentList[EquipmentId]!=null){
+            return EquipmentList[EquipmentId];
+        }
+        else{
+            return GetEquipmentNameByServer(EquipmentId);
+        }
+    }
+    function GetEquipmentNameByServer(EquipmentId){
+        var name="";
+        $.ajax({
+            type: "GET",
+            url: "/Administrator/GetEquipmentName?equId=" + EquipmentId,
+            async: false,
+            success: function (data)
+            {
+                if (data != "")
+                    EquipmentList[EquipmentId] = data;
+                name = data;
+            }
+        });
+        return name;
+    }
+
+	function IsTrueOrFalse(value) {
+		if (value) {
+			return "<span class='label label-success'>是</span>";
+		} else {
+			return "<span class='label label-error'>否</span>";
+		}
+	}
+	function IsTrueOrFalse2(value) {
+		if (value) {
+			return "<span class='color-green fa fa-circle'></span>";
+		} else {
+			return "<span class='color-gray fa fa-circle-o'></span>";
+		}
+	}
+	$(function () {
+		
+		$("#btnQuery").click(function () {
+		    var queryStr = $("#txtQuery").val();
+		    var startTime = $("#startTime").val();
+		    var endTime = $("#endTime").val();
+			
+		    $('#List').datagrid({ url: '/Administrator/GetBreakRuleAnnalList?queryStr=' + encodeURI(queryStr)+"&endTime="+endTime+"&startTime="+startTime });
+		});
+		
+		$("#btnDelete").click(function () 
+		{
+			$.post("/api/System/CheckUserPermissions?AdminUserId=" + AdminUserId + "&PermissionOperationId=N3_Del", function (data) 
+			{
+				if (data.type == 0)
+				{
+					var ids = [];
+					var rows = $('#List').datagrid('getSelections');
+					for (var i = 0; i < rows.length; i++) {
+					    ids.push(rows[i].BreakRuleAnnalId);
+					}
+					var idsStr = ids.join(',');
+					if (rows.length > 0) {
+						$.messager.confirm('提示', '你要删除所选择的记录吗?', function (r) {
+							if (r) {
+								$.post("/Administrator/DelBreakRuleAnnal?id=" + idsStr, function (data) {
+									if (data.type == 0)
+										$("#List").datagrid('reload');
+									$('#List').datagrid('clearSelections');
+									$.messageBox5s('提示', data.message);
+								}, "json");
+							}
+						});
+					}
+					else {
+						$.messageBox5s('提示', '请选择要操作的记录');
+					}
+				}
+				else
+				{
+					$.messageBox5s('提示', data.message);
+				}
+			}, "json");
+		});
+	});
+</script>

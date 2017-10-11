@@ -1,6 +1,0 @@
-[UserID:136]
-
-{"policyNo":"6000000114420170003332","sumPremium":null,"validDate":"2017-09-12 00:00:00","modifyFlag":"B","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"周恩来","identifyNo":"356214199812041245","changeInsured":-79.34,"insuredBusinessSource":"0001001","ProfessionName":"机关内勤、公务员(不从事凶险工作)"}]}
-[UserID:136]
-
-{"policyNo":"6000000114420170003332","sumPremium":null,"validDate":"2017-09-12 00:00:00","modifyFlag":"B","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"周恩来","identifyNo":"356214199812041245","changeInsured":-79.34,"insuredBusinessSource":"0001001","ProfessionName":"机关内勤、公务员(不从事凶险工作)"}]}

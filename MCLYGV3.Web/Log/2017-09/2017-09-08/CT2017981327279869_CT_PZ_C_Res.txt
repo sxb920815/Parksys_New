@@ -1,7 +1,0 @@
-{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":{"Url":"http://183.224.42.121:8080/echannel/chac/YeePay","OrderCoder":"01000170908019373","payType":2,"payAmt":80.0,"vhlType":0,"foreEndURL":"www.baidu.com","randomno":"74392464724668081189502175871519"}}
-{"ErrorMessage":"您有未支付的订单，请先支付或取消订单","ReturnCode":"504","Success":false,"Data":null}
-{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":null}
-{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":null}
-{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":null}
-{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":{"Url":"http://183.224.42.121:8080/echannel/chac/YeePay","OrderCoder":"01000170908019373","payType":2,"payAmt":80.0,"vhlType":0,"foreEndURL":"www.baidu.com","randomno":"28014117753383448752168964700635"}}
-{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":null}

@@ -1,3 +1,0 @@
-[UserID:136]
-
-{"policyNo":"6000000114420170003357","sumPremium":-102.36,"validDate":"2017-09-13 00:00:00","modifyFlag":"B","InsuranceCompany":"CT","InsuredUserList":[{"clientCName":"沈默","identifyNo":"510129197612291348","changeInsured":-102.36,"insuredBusinessSource":"0101001","ProfessionName":"农场经营者（不亲自作业）"}]}

@@ -1,6 +1,0 @@
-{"ret":"0","msg":"","requestId":"null","data":"{"PA_RSLT_MESG":"生成投保单成功","PA_RSLT_CODE":"999999","BUSINESS_NO":"14010019000143177836","AMOUNT":"222","resultMessage":"生成投保单成功","PA_ACCT_TIME":"11:13:57","BK_SERIAL":"S20170905111408","FT_SERIAL":"","resultCode":"999999","applyPolicyInfo":{"offLinePolicyNo":"","noticeNo":"14010019000143177836","coinsDutyProportion":"1","coinsuranceTotalPremium":"0","validateCode":"","isOffLine":"","isFullCoinPremium":"","applyPolicyNo":"51400001900310059909","isGiftInsurance":"","totalPremium":"222","invoiceUrl":""},"BANK_CODE":"P0010027","TRAN_CODE":"000093","PTP_CODE":"","REGION_CODE":"000000","PA_ACCT_DATE":"20170905"}"}
-{"ret":"0","msg":"","requestId":"null","data":"{"BK_SERIAL":"S20170905111948","PA_RSLT_MESG":"流水号CT201709051114011111已经存在，对应投保单号为51400001900310059909","FT_SERIAL":"","PA_RSLT_CODE":"800001","resultCode":"800001","BANK_CODE":"P0010027","TRAN_CODE":"000093","PTP_CODE":"","REGION_CODE":"000000","resultMessage":"流水号CT201709051114011111已经存在，对应投保单号为51400001900310059909","PA_ACCT_TIME":"11:19:50","PA_ACCT_DATE":"20170905"}"}
-{"ret":"0","msg":"","requestId":"null","data":"{"PA_RSLT_MESG":"系统异常","PA_RSLT_CODE":"500"}"}
-
-{"ret":"0","msg":"","requestId":"null","data":"{"PA_RSLT_MESG":"系统异常","PA_RSLT_CODE":"500"}"}
-{"ret":"0","msg":"","requestId":"null","data":"{"PA_RSLT_MESG":"系统异常","PA_RSLT_CODE":"500"}"}

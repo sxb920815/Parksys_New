@@ -1,3 +1,0 @@
-http://test-api.pingan.com.cn:20080/open/appsvr/property/standardAhsDeal?access_token=E7AF2A78F7614FD29BC67F30E7D86430
-
-{"ret":"0","msg":"","requestId":"null","data":"{"BK_SERIAL":"S20170908100017","PA_RSLT_MESG":"平安内部系统异常，请稍后再试。若重试多次后仍为异常，请联系平安IT同事。","FT_SERIAL":"","PA_RSLT_CODE":"800001","resultCode":"800001","BANK_CODE":"P0010027","TRAN_CODE":"000093","PTP_CODE":"","REGION_CODE":"000000","resultMessage":"平安内部系统异常，请稍后再试。若重试多次后仍为异常，请联系平安IT同事。","PA_ACCT_TIME":"10:00:17","PA_ACCT_DATE":"20170908"}"}

@@ -1,2 +1,0 @@
-{"ErrorMessage":"所传保费变化量之和必须等于总保费","ReturnCode":"505","Success":false,"Data":null}
-{"ErrorMessage":"该被保险人已经存在，不能再次批增","ReturnCode":"505","Success":false,"Data":null}

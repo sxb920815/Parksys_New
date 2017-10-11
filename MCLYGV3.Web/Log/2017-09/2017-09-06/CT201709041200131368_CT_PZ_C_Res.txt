@@ -1,1 +1,0 @@
-{"ErrorMessage":null,"ReturnCode":"200","Success":true,"Data":{"Url":"http://183.224.42.121:8080/echannel/chac/YeePay","OrderCoder":"01000170906019159","payType":2,"payAmt":80.0,"vhlType":0,"foreEndURL":"www.baidu.com","randomno":"12187710824534090953580964502738"}}
