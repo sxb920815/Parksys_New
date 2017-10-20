@@ -12,8 +12,9 @@ namespace MCLYGV3.Web.ClassLib
     public class CensusdemoTask
     {
         System.Threading.Timer timer;
-        string imgaePath_C; 
+        string imgaePath_C;
         string imgaePath_D;
+        DateTime dt;
 
         public CensusdemoTask()
         {
@@ -25,23 +26,46 @@ namespace MCLYGV3.Web.ClassLib
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void SetCensus(object obj)
         {
-            //删除C盘照片
+            dt = DateTime.Now.AddMonths(-1);
+            //todo 删除C盘照片
+            Director(imgaePath_C);
 
-
-            //删除D盘照片
-
-
-
-
-            string txt = string.Format("写入时间:{0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            Log.SystemWriteDebug($"{DateTime.Now}============{txt}");
-            //FileInfo f = new FileInfo("/124.txt");
-            //StreamWriter sw = File.Exists("/124.com") ? f.CreateText() : f.AppendText();
-            //byte[] txtbytes = Encoding.UTF8.GetBytes(txt);
-            //sw.WriteLine(txt);
-            //sw.Flush();
-            //sw.Close();
-            //count++;
+            dt = DateTime.Now.AddMonths(-12);
+            //todo 删除D盘照片
+            Director(imgaePath_D);
         }
+
+        public void Director(string path)
+        {
+            DirectoryInfo d = new DirectoryInfo(path);
+            FileSystemInfo[] fsinfos = d.GetFileSystemInfos();
+            foreach (FileSystemInfo fsinfo in fsinfos)
+            {
+                if (fsinfo is DirectoryInfo)     //判断是否为文件夹  
+                {
+                    Director(fsinfo.FullName);//递归调用  
+                }
+                else
+                {
+                    if (fsinfo.CreationTime<dt)
+                    {
+                        File.Delete(fsinfo.FullName);
+                        Log.SystemWriteDebug($"删除文件:{fsinfo.FullName}");
+                    }
+                }
+            }
+            if (fsinfos.Count()==0)
+            {
+                try
+                {
+                    File.Delete(path);
+                }
+                catch (Exception e)
+                {
+                    Log.SystemWriteError($"{e.Message}");
+                }
+            }
+        }
+
     }
 }

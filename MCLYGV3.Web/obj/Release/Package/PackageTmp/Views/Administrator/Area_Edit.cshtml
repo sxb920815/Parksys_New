@@ -1,0 +1,78 @@
+﻿@model MCLYGV3.DB.M_Area
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+<script type="text/javascript">
+	$(function () {
+		$("#btnSave").click(function () {
+			if ($("form").valid()) {
+				var queryArray = $("form").serializeObject();
+				var jsonString = JSON.stringify(queryArray);
+				$.ajax({
+					url: "@Url.Action("EditArea")",
+					type: "Post",
+					data: jsonString,
+					dataType: "json",
+					success: function (data) {
+						if (data.type == 0) {
+							window.parent.frameReturnByMes(data.message);
+							window.parent.frameReturnByReload(true);
+							window.parent.frameReturnByClose()
+						}
+						else {
+							window.parent.frameReturnByMes(data.message);
+						}
+					}
+				});
+			}
+			return false;
+		});
+		$("#btnReturn").click(function () {
+			window.parent.frameReturnByClose();
+		});
+	});
+</script>
+<div class="mvctool bgb">
+	@Html.ToolButton("btnSave", "fa fa-save", "保存", "Save", true)
+	@Html.ToolButton("btnReturn", "fa fa-reply", "返回", false)
+</div>
+@using (Html.BeginForm())
+{
+
+	@Html.HiddenFor(model => model.AreaId)
+
+
+	<table class="formtable">
+        <tbody>
+            <tr>
+                <th>名称:</th>
+                <td>
+                    @Html.EditorFor(model => model.AreaName)
+                    @Html.ValidationMessageFor(model => model.AreaName)
+                </td>
+            </tr>
+            <tr>
+                <th>车位:</th>
+                <td>
+                    @Html.EditorFor(model => model.ParkingNumber)
+                    @Html.ValidationMessageFor(model => model.ParkingNumber)
+                </td>
+            </tr>
+            <tr>
+                <th>剩余车位:</th>
+                <td>
+                    @Html.EditorFor(model => model.RestParkingNumber)
+                    @Html.ValidationMessageFor(model => model.RestParkingNumber)
+                </td>
+            </tr>
+            <tr>
+                <th>备注:</th>
+                <td>
+                    @Html.EditorFor(model => model.Note)
+                    @Html.ValidationMessageFor(model => model.Note)
+                </td>
+            </tr>
+        </tbody>
+	</table>
+
+}

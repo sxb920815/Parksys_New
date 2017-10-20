@@ -1,0 +1,81 @@
+﻿@model MCLYGV3.DB.M_Car
+@{
+	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+    
+}
+<script type="text/javascript">
+	$(function () {
+		$("#btnSave").click(function () {
+			if ($("form").valid()) {
+				var queryArray = $("form").serializeObject();
+				var jsonString = JSON.stringify(queryArray);
+				$.ajax({
+					url: "@Url.Action("AddCar")",
+					type: "Post",
+					data: jsonString,
+					dataType: "json",
+					success: function (data) {
+						if (data.type == 0) {
+							window.parent.frameReturnByMes(data.message);
+							window.parent.frameReturnByReload(true);
+							window.parent.frameReturnByClose()
+						}
+						else {
+							window.parent.frameReturnByMes(data.message);
+						}
+					}
+				});
+			}
+			return false;
+		});
+		$("#btnReturn").click(function () {
+			window.parent.frameReturnByClose();
+		});
+	});
+</script>
+<div class="mvctool bgb">
+	@Html.ToolButton("btnSave", "fa fa-save", "保存", "Save", true)
+	@Html.ToolButton("btnReturn", "fa fa-reply", "返回", false)
+</div>
+@using (Html.BeginForm())
+{
+	<table class="formtable">
+		<tbody>
+			<tr>
+				<th>车主姓名:</th>
+				<td>
+					@Html.EditorFor(model => model.OwnerName)
+					@Html.ValidationMessageFor(model => model.OwnerName)
+				</td>
+			</tr>
+			<tr>
+				<th>车主电话:</th>
+				<td>
+					@Html.EditorFor(model => model.OwnerPhone)
+					@Html.ValidationMessageFor(model => model.OwnerPhone)
+				</td>
+			</tr>
+			<tr>
+				<th>牌照号:</th>
+				<td>
+					@Html.EditorFor(model => model.License)
+					@Html.ValidationMessageFor(model => model.License)
+				</td>
+			</tr>
+            <tr>
+                <th>所属区域:</th>
+                <td>
+                    @Html.DropDownList("AreaId")
+                </td>
+            </tr>
+            <tr>
+                <th>备注:</th>
+                <td>
+                    @Html.EditorFor(model => model.Note)
+                    @Html.ValidationMessageFor(model => model.Note)
+                </td>
+            </tr>
+		</tbody>
+	</table>
+
+}

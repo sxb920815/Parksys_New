@@ -1,6 +1,7 @@
-﻿@model MCLYGV3.DB.M_Company
+﻿@model MCLYGV3.DB.M_Area
 @{
 	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+    
 }
 <script type="text/javascript">
 	$(function () {
@@ -9,7 +10,7 @@
 				var queryArray = $("form").serializeObject();
 				var jsonString = JSON.stringify(queryArray);
 				$.ajax({
-					url: "@Url.Action("AddCompany")",
+					url: "@Url.Action("AddArea")",
 					type: "Post",
 					data: jsonString,
 					dataType: "json",
@@ -41,34 +42,33 @@
 	<table class="formtable">
 		<tbody>
 			<tr>
-				<th>公司名:</th>
+				<th>名称:</th>
 				<td>
-					@Html.EditorFor(model => model.CompanyName)
-					@Html.ValidationMessageFor(model => model.CompanyName)
+					@Html.EditorFor(model => model.AreaName)
+					@Html.ValidationMessageFor(model => model.AreaName)
 				</td>
 			</tr>
 			<tr>
-				<th>电话:</th>
+				<th>车位:</th>
 				<td>
-					@Html.EditorFor(model => model.Tel)
-					@Html.ValidationMessageFor(model => model.Tel)
+					@Html.EditorFor(model => model.ParkingNumber)
+					@Html.ValidationMessageFor(model => model.ParkingNumber)
 				</td>
 			</tr>
 			<tr>
-				<th>信箱:</th>
+				<th>剩余车位:</th>
 				<td>
-					@Html.EditorFor(model => model.Email)
-					@Html.ValidationMessageFor(model => model.Email)
+					@Html.EditorFor(model => model.RestParkingNumber)
+					@Html.ValidationMessageFor(model => model.RestParkingNumber)
 				</td>
 			</tr>
-			<tr>
-				<th>地址:</th>
-				<td>
-					@Html.EditorFor(model => model.Address)
-					@Html.ValidationMessageFor(model => model.Address)
-				</td>
-			</tr>
-
+            <tr>
+                <th>备注:</th>
+                <td>
+                    @Html.EditorFor(model => model.Note)
+                    @Html.ValidationMessageFor(model => model.Note)
+                </td>
+            </tr>
 		</tbody>
 	</table>
 

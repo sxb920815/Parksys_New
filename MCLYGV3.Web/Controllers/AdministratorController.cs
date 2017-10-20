@@ -22,9 +22,21 @@ namespace MCLYGV3.Web.Controllers
 
         public ActionResult Desktop()
         {
-            return View();
+            return View(MyUser);
         }
 
+        [HttpPost]
+        public JsonResult GetDeaktopData()
+        {
+            var result = new DesktopViewModel();
+            int totalCount = 0;
+            var list = _bs_CardAnnal.GetListByPaged(1,8,out totalCount,x=>true,false,new OrderModelField { IsDESC=true,propertyName="CreateTime"});
+            result.Data = new {
+                TotalCount=totalCount,
+                List = list
+            };
+            return Json(result,JsonRequestBehavior.AllowGet);
+        }
 
         public ActionResult Role_Permission_Edit()
         {
@@ -34,5 +46,9 @@ namespace MCLYGV3.Web.Controllers
         {
             return View(MyUser);
         }
+    }
+
+    public class DesktopViewModel{
+        public object Data { get; set; }
     }
 }

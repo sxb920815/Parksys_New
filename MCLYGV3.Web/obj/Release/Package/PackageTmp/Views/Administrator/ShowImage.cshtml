@@ -1,0 +1,9 @@
+﻿@model MCLYGV3.DB.M_CardAnnal
+@{
+    Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.CardAnnalId)
+    <img src="@Model.ImagePath" style="width:100%;height:100%;"/>
+}

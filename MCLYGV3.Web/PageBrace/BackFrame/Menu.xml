@@ -77,7 +77,7 @@
 			</ItemList>
 		</MenuItem>
     
-		<MenuItem>
+		<!--<MenuItem>
 			<id>M8</id>
 			<text>个人中心</text>
 			<iconCls>fa  fa-gears</iconCls>
@@ -92,7 +92,7 @@
 					<state>open</state>
 				</MenuItem>
 			</ItemList>
-		</MenuItem>
+		</MenuItem>-->
 		<MenuItem>
 			<id>M9</id>
 			<text>权限系统</text>

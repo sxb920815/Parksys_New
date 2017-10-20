@@ -12,7 +12,7 @@ var Lang = {
     Greaterorequal: '大于等于'
 };
 //首页
-var index_lang_desktop = "我的桌面";
+var index_lang_desktop = "首页";
 var index_lang_tip = "提示";
 var index_lang_info = "我的资料";
 var index_YouWantToExitTheSystem = "你确定要退出系统吗 ?";

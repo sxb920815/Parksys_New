@@ -39,14 +39,15 @@ namespace MCLYGV3.Web.Controllers
             var checkStartTime = startTime == null;
             var checkEndTime = endTime == null;
 
-            Expression<Func<DB.M_BreakRuleAnnal, bool>> expression =
-                l => (checkName || l.License.Contains(queryStr)) &&
+            Expression<Func<DB.M_CardAnnal, bool>> expression =
+                 l => (checkName || l.License.Contains(queryStr)) &&
                 (checkStartTime || l.CreateTime >= startTime) &&
-                (checkEndTime || l.CreateTime <= endTime);
+                (checkEndTime || l.CreateTime <= endTime) &&
+                l.IsBreak==1;
 
-            var list = _bs_BreakRuleAnnal.GetListByPaged(pager.page, pager.rows, out count, expression, isDesc, new OrderModelField { IsDESC = isDesc, propertyName = pager.sort });
+            var list = _bs_CardAnnal.GetListByPaged(pager.page, pager.rows, out count, expression, isDesc, new OrderModelField { IsDESC = isDesc, propertyName = pager.sort });
 
-            GridRows<DB.M_BreakRuleAnnal> grs = new GridRows<DB.M_BreakRuleAnnal>();
+            GridRows<DB.M_CardAnnal> grs = new GridRows<DB.M_CardAnnal>();
             grs.rows = list;
             grs.total = count;
             Response.ContentType = "application/json";
@@ -179,8 +180,43 @@ namespace MCLYGV3.Web.Controllers
             return JsonConvert.SerializeObject(result);
         }
         #endregion
+        public ActionResult ShowImage(int ID)
+        {
+            var obj = _bs_CardAnnal.GetSingleById(ID);
+            return View(obj);
+        }
 
 
+
+
+        public ActionResult WaveCard_List(int waveAnnalId = 0)
+        {
+            ViewBag.WaveAnnalId = waveAnnalId;
+            return View(MyUser);
+        }
+        public string GetWaveCard(GridPager pager, int waveAnnalId = 0)
+        {
+            int count = 0;
+            var isDesc = pager.order == "desc";
+
+            var waveAnnal = _bs_WaveAnnal.GetSingleById(waveAnnalId);
+            var beginTime = waveAnnal.CreateTime.AddSeconds(-10);
+            var endTime = waveAnnal.CreateTime.AddSeconds(10);
+
+            Expression<Func<DB.M_CardAnnal, bool>> expression =
+                 l => l.CreateTime>=beginTime && l.CreateTime<=endTime;
+
+            var list = _bs_CardAnnal.GetListByPaged(pager.page, pager.rows, out count, expression, isDesc, new OrderModelField { IsDESC = isDesc, propertyName = pager.sort });
+
+            GridRows<DB.M_CardAnnal> grs = new GridRows<DB.M_CardAnnal>();
+            grs.rows = list;
+            grs.total = count;
+            Response.ContentType = "application/json";
+            Response.Charset = "UTF-8";
+            IsoDateTimeConverter timeFormat = new IsoDateTimeConverter();
+            timeFormat.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
+            return JsonConvert.SerializeObject(grs, Formatting.Indented, timeFormat);
+        }
 
     }
 }

@@ -1,6 +1,7 @@
-﻿@model MCLYGV3.DB.M_Company
+﻿@model MCLYGV3.DB.M_AreaAndEqu
 @{
 	Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+    
 }
 <script type="text/javascript">
 	$(function () {
@@ -9,7 +10,7 @@
 				var queryArray = $("form").serializeObject();
 				var jsonString = JSON.stringify(queryArray);
 				$.ajax({
-					url: "@Url.Action("EditCompany")",
+					url: "@Url.Action("AddAreaAndEqu")",
 					type: "Post",
 					data: jsonString,
 					dataType: "json",
@@ -38,42 +39,31 @@
 </div>
 @using (Html.BeginForm())
 {
-
-	@Html.HiddenFor(model => model.ID)
-
-
 	<table class="formtable">
-		<tbody>
-			<tr>
-				<th>公司名:</th>
-				<td>
-					@Html.EditorFor(model => model.CompanyName)
-					@Html.ValidationMessageFor(model => model.CompanyName)
-				</td>
-			</tr>
-			<tr>
-				<th>电话:</th>
-				<td>
-					@Html.EditorFor(model => model.Tel)
-					@Html.ValidationMessageFor(model => model.Tel)
-				</td>
-			</tr>
-			<tr>
-				<th>信箱:</th>
-				<td>
-					@Html.EditorFor(model => model.Email)
-					@Html.ValidationMessageFor(model => model.Email)
-				</td>
-			</tr>
-			<tr>
-				<th>地址:</th>
-				<td>
-					@Html.EditorFor(model => model.Address)
-					@Html.ValidationMessageFor(model => model.Address)
-				</td>
-			</tr>
+        <tbody>
+            <tr>
+                <th>设备:</th>
+                <td>
+                    @Html.DropDownList("EquipmentId")
+                </td>
+            </tr>
+            <tr>
+                <th>区域:</th>
+                <td>
+                    @Html.DropDownList("AreaId")
+                </td>
+            </tr>
+            <tr>
+                <th>状态:</th>
+                <td>
+                    <select id="State" name="State">
+                        <option value="进">进</option>
+                        <option value="出">出</option>
+                    </select>
+                </td>
+            </tr>
 
-		</tbody>
+        </tbody>
 	</table>
 
 }

@@ -394,6 +394,8 @@
     <Content Include="Views\Administrator\BreakRuleAnnal_List.cshtml" />
     <Content Include="Views\Administrator\CardAnnal_List.cshtml" />
     <Content Include="Views\Administrator\WaveAnnal_List.cshtml" />
+    <Content Include="Views\Administrator\ShowImage.cshtml" />
+    <Content Include="Views\Administrator\WaveCard_List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

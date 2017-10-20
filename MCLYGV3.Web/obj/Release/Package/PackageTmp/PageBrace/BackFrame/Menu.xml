@@ -3,45 +3,81 @@
 	<ItemList>
 		<MenuItem>
 			<id>M5</id>
-			<text>订单管理</text>
+			<text>信息记录</text>
 			<iconCls>fa  fa-wrench</iconCls>
 			<attributes>#</attributes>
 			<state>closed</state>
 			<ItemList>
+        <MenuItem>
+          <id>M5_1</id>
+          <text>首页</text>
+          <iconCls>fa  fa-reorder</iconCls>
+          <attributes>Administrator/Desktop</attributes>
+          <state>open</state>
+        </MenuItem>
 				<MenuItem>
-					<id>M5_1</id>
-					<text>订单列表</text>
+					<id>M5_2</id>
+					<text>违章车辆</text>
 					<iconCls>fa  fa-reorder</iconCls>
-					<attributes>Administrator/Order_List</attributes>
+					<attributes>Administrator/BreakRuleAnnal_List</attributes>
 					<state>open</state>
 				</MenuItem>
-				
+        <MenuItem>
+          <id>M5_3</id>
+          <text>出入记录</text>
+          <iconCls>fa  fa-reorder</iconCls>
+          <attributes>Administrator/CardAnnal_List</attributes>
+          <state>open</state>
+        </MenuItem>
+        <MenuItem>
+          <id>M5_4</id>
+          <text>微波记录</text>
+          <iconCls>fa  fa-reorder</iconCls>
+          <attributes>Administrator/WaveAnnal_List</attributes>
+          <state>open</state>
+        </MenuItem>
 			</ItemList>
 		</MenuItem>
+    
 		<MenuItem>
 			<id>M7</id>
-			<text>业务管理</text>
+			<text>系统管理</text>
 			<iconCls>fa  fa-wrench</iconCls>
 			<attributes>#</attributes>
 			<state>closed</state>
 			<ItemList>
 				<MenuItem>
 					<id>M7_1</id>
-					<text>代理公司列表</text>
+					<text>摄像机管理</text>
 					<iconCls>fa  fa-reorder</iconCls>
-					<attributes>Administrator/Company_List</attributes>
+					<attributes>Administrator/Equipment_List</attributes>
 					<state>open</state>
 				</MenuItem>
 				<MenuItem>
 					<id>M7_2</id>
-					<text>业务员列表</text>
+					<text>区域管理</text>
 					<iconCls>fa  fa-reorder</iconCls>
-					<attributes>Administrator/UserInfo_List</attributes>
+					<attributes>Administrator/Area_List</attributes>
 					<state>open</state>
 				</MenuItem>
+        <MenuItem>
+          <id>M7_3</id>
+          <text>摄像机区域绑定</text>
+          <iconCls>fa  fa-reorder</iconCls>
+          <attributes>Administrator/AreaAndEqu_List</attributes>
+          <state>open</state>
+        </MenuItem>
+        <MenuItem>
+          <id>M7_4</id>
+          <text>内部车辆管理</text>
+          <iconCls>fa  fa-reorder</iconCls>
+          <attributes>Administrator/Car_List</attributes>
+          <state>open</state>
+        </MenuItem>
 			</ItemList>
 		</MenuItem>
-		<MenuItem>
+    
+		<!--<MenuItem>
 			<id>M8</id>
 			<text>个人中心</text>
 			<iconCls>fa  fa-gears</iconCls>
@@ -56,7 +92,7 @@
 					<state>open</state>
 				</MenuItem>
 			</ItemList>
-		</MenuItem>
+		</MenuItem>-->
 		<MenuItem>
 			<id>M9</id>
 			<text>权限系统</text>

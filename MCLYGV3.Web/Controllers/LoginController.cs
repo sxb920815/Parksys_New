@@ -47,12 +47,12 @@ namespace MCLYGV3.Web.Controllers
             }
         }
 
-		[HttpPost]
         public ActionResult Logout()
         {
             Session.Remove("AdminUser");
             var result = new DataJsonResult();
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return Redirect("AdminLogin");
+            //return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
     public class JS
